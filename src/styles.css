@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-muted: rgb(255 255 255 / 0.6);
+  --color-soft: rgb(255 255 255 / 0.3);
+  --color-surface: #0b0b0b;
+  --color-inverse-bg: #ffffff;
+  --color-inverse-text: #000000;
+  --color-border: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Space Mono', monospace;
+}
+
+::selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+[data-theme='dark'] {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-muted: rgb(255 255 255 / 0.6);
+  --color-soft: rgb(255 255 255 / 0.3);
+  --color-surface: #0b0b0b;
+  --color-inverse-bg: #ffffff;
+  --color-inverse-text: #000000;
+  --color-border: #ffffff;
+}
+
+[data-theme='light'] {
+  --color-bg: #fdf8f8;
+  --color-text: #050505;
+  --color-muted: rgb(5 5 5 / 0.62);
+  --color-soft: rgb(5 5 5 / 0.18);
+  --color-surface: #ffffff;
+  --color-inverse-bg: #050505;
+  --color-inverse-text: #ffffff;
+  --color-border: #d8d4d2;
+}
+
+.grid-paper {
+  background-image:
+    linear-gradient(to right, var(--color-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-soft) 1px, transparent 1px);
+  background-size: 25% 100px;
+  background-position: 0 0;
+}
+
