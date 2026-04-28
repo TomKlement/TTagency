@@ -41,6 +41,16 @@ export function Layout({ children }: { children: ReactNode }) {
     }
   }, [])
 
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname])
+
   const toggleTheme = () => {
     setTheme((current) => {
       const next = current === 'dark' ? 'light' : 'dark'
