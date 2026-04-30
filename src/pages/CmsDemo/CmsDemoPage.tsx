@@ -1,10 +1,10 @@
-const cards = [
-  { title: 'ONYX', items: ['Rigid 12-column grid', 'Static asset delivery', 'Markdown content models'], layout: 'onyx' },
-  { title: 'MONOLITH', items: ['Integrated Database', 'Dynamic Routing', 'Role-based access control'], layout: 'monolith' },
-  { title: 'AETHER', items: ['Headless API First', 'Real-time collaboration', 'Omnichannel distribution'], layout: 'aether' },
-] as const
+import { useTranslation } from 'react-i18next'
+import { PageMeta } from '../../shared/seo/PageMeta'
+import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
 
-function Wireframe({ layout }: { layout: (typeof cards)[number]['layout'] }) {
+const layouts = ['onyx', 'monolith', 'aether'] as const
+
+function Wireframe({ layout }: { layout: (typeof layouts)[number] }) {
   if (layout === 'onyx') {
     return (
       <div className="absolute inset-3 border border-current/20 p-2">
@@ -66,20 +66,26 @@ function Wireframe({ layout }: { layout: (typeof cards)[number]['layout'] }) {
 }
 
 export function CmsDemoPage() {
+  const { t } = useTranslation()
+
+  const templates = t('cmsDemo.templates', { returnObjects: true }) as Array<{ title: string; items: string[] }>
+
   return (
     <div className="border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text)]">
+      <PageMeta pageKey="cmsDemo" />
+      <GeoJsonLd pageKey="cmsDemo" />
       <section className="px-8 py-24 text-center">
         <h1 className="font-serif font-black uppercase text-[clamp(44px,6vw,76px)] leading-[1] tracking-tight">
-          CMS ARCHITECTURES.
+          {t('cmsDemo.h1')}
         </h1>
         <p className="mt-6 text-[var(--color-muted)] text-[17px] max-w-[72ch] mx-auto leading-relaxed">
-          Explore our modular content management systems. Select an architecture to preview the wireframe environment.
+          {t('cmsDemo.intro')}
         </p>
       </section>
 
       <section className="max-w-[1400px] mx-auto px-8 pb-28">
         <div className="grid grid-cols-1 md:grid-cols-3 border border-[var(--color-border)]">
-          {cards.map((c, idx) => (
+          {templates.map((c, idx) => (
             <article
               key={c.title}
               className={[
@@ -91,7 +97,7 @@ export function CmsDemoPage() {
                 {c.title}
               </h2>
               <div className="mt-10 relative h-64 border border-current p-4 overflow-hidden bg-[var(--color-surface)]">
-                <Wireframe layout={c.layout} />
+                <Wireframe layout={layouts[idx] ?? 'onyx'} />
               </div>
               <div className="mt-8 border-t border-current pt-6">
                 <ul className="space-y-4 text-[15px]">
@@ -106,10 +112,14 @@ export function CmsDemoPage() {
               <button
                 className="mt-12 uppercase tracking-[0.18em] text-[11px] h-12 border border-current bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
               >
-                Launch preview
+                {t('cmsDemo.button')}
               </button>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 text-center text-[var(--color-muted)] text-[13px] leading-relaxed">
+          {t('cmsDemo.cta')} <a className="underline hover:text-[var(--color-text)]" href={`mailto:${t('brand.email')}`}>{t('brand.email')}</a>
         </div>
       </section>
     </div>

@@ -2,10 +2,15 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useTranslation } from 'react-i18next'
+import { PageMeta } from '../../shared/seo/PageMeta'
+import { FaqSection } from '../../shared/geo/FaqSection'
+import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export function HomePage() {
+  const { t } = useTranslation()
   const heroRef = useRef<HTMLDivElement | null>(null)
   const titleRef = useRef<HTMLHeadingElement | null>(null)
 
@@ -37,21 +42,24 @@ export function HomePage() {
 
   return (
     <div className="bg-[var(--color-bg)] text-[var(--color-text)]">
+      <PageMeta pageKey="home" />
+      <GeoJsonLd pageKey="home" faqKey="home" />
       <section
         ref={heroRef}
         className="relative overflow-hidden border-b border-[var(--color-border)] px-8 md:px-12 pb-20 min-h-[82vh] flex flex-col justify-end grid-paper"
       >
         <div className="relative z-10 max-w-[1440px] mx-auto w-full">
-          <p className="uppercase tracking-[0.24em] text-[11px] text-[var(--color-muted)] mb-10">The Core Agency</p>
+          <p className="uppercase tracking-[0.24em] text-[11px] text-[var(--color-muted)] mb-10">
+            {t('home.hero.kicker')}
+          </p>
           <h1
             ref={titleRef}
             className="font-serif font-black uppercase leading-[0.92] text-[clamp(58px,10vw,120px)] max-w-[980px]"
           >
-            WE BUILD DIGITAL MONUMENTS
+            {t('home.hero.h1')}
           </h1>
           <p className="mt-10 max-w-[680px] text-[15px] leading-relaxed text-[var(--color-muted)]">
-            Studio VZN engineers uncompromising digital architecture. We reject ornamental noise and focus on structure,
-            performance, and timeless minimalist presence.
+            {t('home.hero.subheadline')}
           </p>
         </div>
       </section>
@@ -64,15 +72,17 @@ export function HomePage() {
           >
             <div>
               <span className="uppercase tracking-[0.18em] text-[10px] text-[var(--color-muted)] group-hover:text-[var(--color-bg)]">
-                01
+                {t('home.blocks.architecture.number')}
               </span>
-              <h2 className="mt-8 font-serif font-black text-[30px] leading-tight">Architecture</h2>
+              <h2 className="mt-8 font-serif font-black text-[30px] leading-tight">
+                {t('home.blocks.architecture.title')}
+              </h2>
               <p className="mt-3 max-w-[32ch] text-[13px] leading-relaxed opacity-70">
-                Systemic design foundations built to scale gracefully.
+                {t('home.blocks.architecture.body')}
               </p>
             </div>
             <div className="flex items-end justify-between uppercase tracking-[0.18em] text-[10px]">
-              <span className="border-b border-current pb-1">Explore</span>
+              <span className="border-b border-current pb-1">{t('home.blocks.architecture.cta')}</span>
               <span className="text-xl">→</span>
             </div>
           </Link>
@@ -88,14 +98,16 @@ export function HomePage() {
             </div>
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
-                <span className="uppercase tracking-[0.18em] text-[10px] text-[var(--color-muted)]">02</span>
-                <h2 className="mt-8 font-serif font-black text-[44px] leading-tight">CMS Demo</h2>
+                <span className="uppercase tracking-[0.18em] text-[10px] text-[var(--color-muted)]">
+                  {t('home.blocks.cms.number')}
+                </span>
+                <h2 className="mt-8 font-serif font-black text-[44px] leading-tight">{t('home.blocks.cms.title')}</h2>
                 <p className="mt-3 max-w-[460px] text-[15px] leading-relaxed text-[var(--color-muted)]">
-                  Experience the brutal efficiency of our headless content management architecture.
+                  {t('home.blocks.cms.body')}
                 </p>
               </div>
               <span className="w-max border border-[var(--color-border)] px-6 py-3 uppercase tracking-[0.18em] text-[10px] group-hover:bg-[var(--color-text)] group-hover:text-[var(--color-bg)]">
-                Initialize Demo
+                {t('home.blocks.cms.cta')}
               </span>
             </div>
           </Link>
@@ -106,15 +118,15 @@ export function HomePage() {
           >
             <div>
               <span className="uppercase tracking-[0.18em] text-[10px] text-[var(--color-muted)] group-hover:text-[var(--color-bg)]">
-                03
+                {t('home.blocks.pricing.number')}
               </span>
-              <h2 className="mt-8 font-serif font-black text-[32px] leading-tight">Pricing Models</h2>
+              <h2 className="mt-8 font-serif font-black text-[32px] leading-tight">{t('home.blocks.pricing.title')}</h2>
               <p className="mt-3 text-[13px] leading-relaxed opacity-70">
-                Transparent capital requirements for digital monuments.
+                {t('home.blocks.pricing.body')}
               </p>
             </div>
             <span className="w-max border-b border-current pb-1 uppercase tracking-[0.18em] text-[10px]">
-              View Structuring
+              {t('home.blocks.pricing.cta')}
             </span>
           </Link>
 
@@ -123,15 +135,15 @@ export function HomePage() {
             className="col-span-12 md:col-span-6 min-h-[300px] border border-[var(--color-border)] bg-[var(--color-inverse-bg)] text-[var(--color-inverse-text)] p-8 flex flex-col justify-between"
           >
             <div>
-              <span className="uppercase tracking-[0.18em] text-[10px] opacity-55">04</span>
-              <h2 className="mt-8 font-serif font-black text-[32px] leading-tight">Initiate Contact</h2>
+              <span className="uppercase tracking-[0.18em] text-[10px] opacity-55">{t('home.blocks.contact.number')}</span>
+              <h2 className="mt-8 font-serif font-black text-[32px] leading-tight">{t('home.blocks.contact.title')}</h2>
               <p className="mt-3 text-[13px] leading-relaxed opacity-70">
-                Begin the consultation process for your next structural entity.
+                {t('home.blocks.contact.body')}
               </p>
             </div>
             <div className="flex gap-4 border-t border-current/35 pt-4">
               <span className="flex-1 border-b border-current/35 pb-2 uppercase tracking-[0.18em] text-[10px] opacity-55">
-                Enter email address
+                {t('home.blocks.contact.fieldHint')}
               </span>
               <span>→</span>
             </div>
@@ -141,32 +153,20 @@ export function HomePage() {
 
       <section className="border-y border-[var(--color-border)]">
         <div className="max-w-[1440px] mx-auto p-8 border-x border-[var(--color-border)] flex items-end justify-between">
-          <h2 className="font-serif font-black uppercase text-[32px] tracking-tight">FEATURED INDEX</h2>
+          <h2 className="font-serif font-black uppercase text-[32px] tracking-tight">{t('home.featured.title')}</h2>
           <Link
             className="uppercase tracking-[0.18em] text-[10px] underline hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] px-2 py-1"
             to="/portfolio"
           >
-            VIEW ALL ARCHIVES
+            {t('home.featured.cta')}
           </Link>
         </div>
       </section>
 
       <section className="max-w-[1440px] mx-auto border-x border-[var(--color-border)]">
         <div className="grid grid-cols-1 md:grid-cols-3">
-          {[
-            {
-              title: 'ENGINEERING',
-              desc: 'Solid state infrastructure built for scale and permanence.',
-            },
-            {
-              title: 'DESIGN SYSTEMS',
-              desc: 'Rigid visual languages enforced across all touchpoints.',
-            },
-            {
-              title: 'STRATEGY',
-              desc: 'Calculated brand positioning based on data, not emotion.',
-            },
-          ].map((c, idx) => (
+          {(t('home.capabilities.items', { returnObjects: true }) as Array<{ title: string; desc: string }>).map(
+            (c, idx) => (
             <div
               key={c.title}
               className={[
@@ -175,14 +175,17 @@ export function HomePage() {
               ].join(' ')}
             >
               <span className="uppercase tracking-[0.18em] text-[10px] text-[var(--color-muted)] block mb-12">
-                Capabilities
+                {t('home.capabilities.kicker')}
               </span>
               <h3 className="font-serif font-black uppercase text-[20px] tracking-tight">{c.title}</h3>
               <p className="mt-4 text-[var(--color-muted)] text-[13px] leading-relaxed max-w-[44ch]">{c.desc}</p>
             </div>
-          ))}
+          ),
+          )}
         </div>
       </section>
+
+      <FaqSection faqKey="home" />
     </div>
   )
 }
