@@ -13,6 +13,9 @@
   --color-inverse-bg: #ffffff;
   --color-inverse-text: #000000;
   --color-border: #ffffff;
+  --color-cta-panel-bg: #111111;
+  --color-cta-panel-fg: #ffffff;
+  --color-cta-panel-muted: rgb(255 255 255 / 0.68);
 }
 
 html,
@@ -40,6 +43,9 @@ body {
   --color-inverse-bg: #ffffff;
   --color-inverse-text: #000000;
   --color-border: #ffffff;
+  --color-cta-panel-bg: #111111;
+  --color-cta-panel-fg: #ffffff;
+  --color-cta-panel-muted: rgb(255 255 255 / 0.68);
 }
 
 [data-theme='light'] {
@@ -51,6 +57,9 @@ body {
   --color-inverse-bg: #050505;
   --color-inverse-text: #ffffff;
   --color-border: #d8d4d2;
+  --color-cta-panel-bg: #0a0a0a;
+  --color-cta-panel-fg: #fdf8f8;
+  --color-cta-panel-muted: rgb(253 248 248 / 0.72);
 }
 
 .grid-paper {

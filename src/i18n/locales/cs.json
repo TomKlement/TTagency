@@ -28,6 +28,9 @@
       "label": "Jazyk",
       "en": "EN",
       "cs": "CZ"
+    },
+    "faq": {
+      "h2": "ČASTO\nKLÁDANÉ"
     }
   },
   "meta": {
@@ -209,6 +212,17 @@
   "pricing": {
     "h1": "Ceník bez omáčky",
     "subheadline": "Dva směry: rychlý web ze šablony (jednorázově nebo měsíčně) a prémiové custom řešení pro individuální potřeby. Držíme design. Držíme výkon.",
+    "toggle": {
+      "monthly": "Měsíčně",
+      "oneOff": "Jednorázově"
+    },
+    "badgePopular": "Doporučeno",
+    "enterprise": {
+      "kicker": "Mimo šablonu",
+      "title": "NA MÍRU\nA VĚTŠÍ ROZSAH",
+      "body": "Custom web, webová aplikace nebo interní systém — rozsah vždy po krátké konzultaci. Navrhneme strukturu, technické řešení a férové etapování.",
+      "cta": "Domluvit konzultaci"
+    },
     "subscription": {
       "kicker": "Měsíčně",
       "intro": "Web jako služba. V ceně máte vytvoření webu na naší šabloně, provoz, hosting i doménu. Závazek 12 měsíců (aby se zaplatila práce na setupu).",

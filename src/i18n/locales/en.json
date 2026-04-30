@@ -28,6 +28,9 @@
       "label": "Language",
       "en": "EN",
       "cs": "CZ"
+    },
+    "faq": {
+      "h2": "FREQUENTLY\nASKED"
     }
   },
   "meta": {
@@ -209,6 +212,17 @@
   "pricing": {
     "h1": "Pricing that stays honest",
     "subheadline": "Two tracks: fast template websites (one-off or monthly) and premium custom builds for teams that need something individual. Same brutal clarity. Better fit.",
+    "toggle": {
+      "monthly": "Monthly",
+      "oneOff": "One-off"
+    },
+    "badgePopular": "Popular",
+    "enterprise": {
+      "kicker": "Beyond the grid",
+      "title": "CUSTOM\nSCOPE & PRODUCTS",
+      "body": "Custom websites, web apps, or internal tools — scope always after a short consult. We’ll propose structure, technical approach, and fair phasing.",
+      "cta": "Book a consult"
+    },
     "subscription": {
       "kicker": "Monthly",
       "intro": "Website as a service. The monthly plan includes setup on our template, hosting, and domain. Minimum 12-month commitment (so the initial build/setup pays for itself).",
