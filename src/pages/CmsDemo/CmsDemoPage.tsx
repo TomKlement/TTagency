@@ -1,6 +1,11 @@
+import { useEffect, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const layouts = ['onyx', 'monolith', 'aether'] as const
 
@@ -67,14 +72,53 @@ function Wireframe({ layout }: { layout: (typeof layouts)[number] }) {
 
 export function CmsDemoPage() {
   const { t } = useTranslation()
+  const pageRef = useRef<HTMLDivElement | null>(null)
+
+  const reduceMotion = useMemo(() => {
+    if (typeof window === 'undefined') return true
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
+  }, [])
 
   const templates = t('cmsDemo.templates', { returnObjects: true }) as Array<{ title: string; items: string[] }>
 
+  useEffect(() => {
+    if (reduceMotion) return
+    const root = pageRef.current
+    if (!root) return
+
+    const ctx = gsap.context(() => {
+      const els = gsap.utils.toArray<HTMLElement>('[data-reveal]')
+      if (els.length === 0) return
+
+      gsap.set(els, { autoAlpha: 0, y: 18, filter: 'blur(10px)' })
+
+      ScrollTrigger.batch(els, {
+        start: 'top 86%',
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            autoAlpha: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.6,
+            ease: 'power2.out',
+            stagger: 0.08,
+            clearProps: 'opacity,transform,visibility,filter',
+          })
+        },
+      })
+    }, root)
+
+    return () => ctx.revert()
+  }, [reduceMotion, templates.length])
+
   return (
-    <div className="border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text)]">
+    <div
+      ref={pageRef}
+      className="border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text)]"
+    >
       <PageMeta pageKey="cmsDemo" />
       <GeoJsonLd pageKey="cmsDemo" />
-      <section className="px-8 py-24 text-center">
+      <section data-reveal className="px-8 py-24 text-center">
         <h1 className="font-serif font-black uppercase text-[clamp(44px,6vw,76px)] leading-[1] tracking-tight">
           {t('cmsDemo.h1')}
         </h1>
@@ -88,6 +132,7 @@ export function CmsDemoPage() {
           {templates.map((c, idx) => (
             <article
               key={c.title}
+              data-reveal
               className={[
                 'p-9 md:p-10 min-h-[640px] flex flex-col group hover:bg-[var(--color-surface)]',
                 idx < 2 ? 'border-b md:border-b-0 md:border-r border-[var(--color-border)]' : '',
@@ -118,7 +163,7 @@ export function CmsDemoPage() {
           ))}
         </div>
 
-        <div className="mt-10 text-center text-[var(--color-muted)] text-[13px] leading-relaxed">
+        <div data-reveal className="mt-10 text-center text-[var(--color-muted)] text-[13px] leading-relaxed">
           {t('cmsDemo.cta')} <a className="underline hover:text-[var(--color-text)]" href={`mailto:${t('brand.email')}`}>{t('brand.email')}</a>
         </div>
       </section>

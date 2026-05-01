@@ -68,14 +68,14 @@
   "home": {
     "hero": {
       "kicker": "BLOC | LAB",
-      "h1": "Next.js & React web design agency",
+      "h1": "STRUCTURE\nIS THE\nDESIGN.",
       "subheadline": "Minimal, architectural websites and web apps. Built in Prague. Shipped worldwide. Own CMS included."
     },
     "blocks": {
       "architecture": {
         "number": "01",
         "title": "Architecture",
-        "body": "Brand sites, portfolios, startups, SaaS, e-commerce, web applications. Clean layouts. Fast builds.",
+        "body": "Brand sites, portfolios, startups, SaaS, e-commerce, web applications. Clean layouts.",
         "cta": "Explore"
       },
       "cms": {
@@ -87,7 +87,7 @@
       "pricing": {
         "number": "03",
         "title": "Pricing",
-        "body": "Transparent tiers. Two senior devs. No agency overhead.",
+        "body": "Two pricing models. One for speed, one for scale.",
         "cta": "View tiers"
       },
       "contact": {
@@ -98,27 +98,28 @@
       }
     },
     "featured": {
-      "title": "Featured index",
-      "cta": "View all archives"
+      "title": "How we work"
     },
     "about": {
       "kicker": "About",
       "body": "We’re two senior front-end developers (both Tomáš). We design and build high-performing React / Next.js websites with a brutal, minimalist edge—and a CMS that keeps them sharp over time."
     },
-    "capabilities": {
-      "kicker": "Capabilities",
-      "items": [
+    "howWeWork": {
+      "steps": [
         {
-          "title": "Engineering",
-          "desc": "Performance-first builds, clean architecture, and maintainable systems."
+          "number": "01",
+          "title": "Discovery",
+          "body": "First, we align on the site’s goals, audience, content, and priorities. No designing in the dark without context."
         },
         {
-          "title": "Design systems",
-          "desc": "A strict visual language enforced across every page and component."
+          "number": "02",
+          "title": "Design & build",
+          "body": "We shape the structure, refine the visuals, and ship a fast, responsive site that’s ready for real use."
         },
         {
-          "title": "Strategy",
-          "desc": "Clear positioning and structure that supports conversion and SEO."
+          "number": "03",
+          "title": "Launch & care",
+          "body": "We help with launch basics—domain, hosting, and ongoing updates depending on the plan you choose."
         }
       ]
     }

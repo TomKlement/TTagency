@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import gsap from 'gsap'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { FaqSection } from '../../shared/geo/FaqSection'
 import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
@@ -12,6 +13,130 @@ const subscriptionTierKeys = ['foundation', 'build', 'scale'] as const
 export function PricingPage() {
   const { t } = useTranslation()
   const [mode, setMode] = useState<PricingMode>('monthly')
+  const [isSwitching, setIsSwitching] = useState(false)
+  const cardsRef = useRef<HTMLElement | null>(null)
+  const togglePillRef = useRef<HTMLSpanElement | null>(null)
+
+  const reduceMotion = useMemo(() => {
+    if (typeof window === 'undefined') return true
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
+  }, [])
+
+  const requestModeChange = (next: PricingMode) => {
+    if (next === mode) return
+    if (reduceMotion) {
+      setMode(next)
+      return
+    }
+    if (isSwitching) return
+
+    setIsSwitching(true)
+    const root = cardsRef.current
+    const pill = togglePillRef.current
+
+    if (pill) {
+      gsap.killTweensOf(pill)
+      gsap.to(pill, {
+        xPercent: next === 'monthly' ? 0 : 100,
+        duration: 0.5,
+        ease: 'elastic.out(1, 0.75)',
+      })
+    }
+
+    if (!root) {
+      setMode(next)
+      return
+    }
+
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-pricing-card]'))
+    const prices = Array.from(root.querySelectorAll<HTMLElement>('[data-price]'))
+    gsap.killTweensOf(cards)
+    gsap.killTweensOf(prices)
+
+    const tl = gsap.timeline({
+      defaults: { overwrite: true },
+      onComplete: () => setMode(next),
+    })
+
+    tl.to(prices, {
+      filter: 'brightness(0.98)',
+      duration: 0.1,
+      ease: 'power1.out',
+    })
+    tl.to(
+      cards,
+      {
+        autoAlpha: 0,
+        y: -10,
+        rotateX: 6,
+        transformOrigin: '50% 0%',
+        filter: 'blur(6px)',
+        duration: 0.22,
+        ease: 'power2.in',
+        stagger: 0.04,
+      },
+      0,
+    )
+  }
+
+  useEffect(() => {
+    if (reduceMotion) return
+    const root = cardsRef.current
+    if (!root) return
+
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray<HTMLElement>('[data-pricing-card]')
+      const prices = gsap.utils.toArray<HTMLElement>('[data-price]')
+
+      gsap.killTweensOf(cards)
+      gsap.killTweensOf(prices)
+
+      gsap.set(cards, { transformPerspective: 800 })
+      gsap.fromTo(
+        cards,
+        { autoAlpha: 0, y: 22, rotateX: -8, filter: 'blur(8px)' },
+        {
+          autoAlpha: 1,
+          y: 0,
+          rotateX: 0,
+          filter: 'blur(0px)',
+          duration: 0.55,
+          ease: 'power2.out',
+          stagger: 0.07,
+          clearProps: 'opacity,transform,visibility,filter',
+        },
+      )
+
+      gsap.fromTo(
+        prices,
+        { scale: 0.99, filter: 'brightness(1)' },
+        {
+          scale: 1.02,
+          filter: 'brightness(1.08)',
+          duration: 0.22,
+          ease: 'back.out(2)',
+          yoyo: true,
+          repeat: 1,
+          clearProps: 'transform,filter',
+        },
+      )
+    }, root)
+
+    return () => ctx.revert()
+  }, [mode, reduceMotion])
+
+  useEffect(() => {
+    if (reduceMotion) return
+    const pill = togglePillRef.current
+    if (!pill) return
+    gsap.set(pill, { xPercent: mode === 'monthly' ? 0 : 100 })
+  }, [mode, reduceMotion])
+
+  useEffect(() => {
+    if (!isSwitching) return
+    const id = window.setTimeout(() => setIsSwitching(false), 650)
+    return () => window.clearTimeout(id)
+  }, [isSwitching])
 
   const oneOffItems = t('pricing.oneOff.items', { returnObjects: true }) as Array<{
     title: string
@@ -37,30 +162,45 @@ export function PricingPage() {
 
         <section className="px-12 md:px-24 py-16 border-b border-[var(--color-border)]">
           <div
-            className="inline-flex w-full max-w-md border border-[var(--color-border)]"
+            className="relative inline-flex w-full max-w-md overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg)]"
             role="group"
             aria-label={t('pricing.h1')}
           >
+            <span
+              ref={togglePillRef}
+              aria-hidden
+              className={[
+                'pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-[var(--color-text)]',
+              ].join(' ')}
+            />
             <button
               type="button"
-              onClick={() => setMode('monthly')}
+              onClick={() => requestModeChange('monthly')}
+              disabled={isSwitching}
+              aria-pressed={mode === 'monthly'}
               className={[
-                'flex-1 px-4 py-3 uppercase tracking-[0.2em] text-[10px] font-semibold transition-none',
+                'relative z-10 flex-1 px-4 py-3 uppercase tracking-[0.2em] text-[10px] font-semibold',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)]/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]',
+                'disabled:opacity-70 disabled:cursor-not-allowed',
                 mode === 'monthly'
-                  ? 'bg-[var(--color-text)] text-[var(--color-bg)]'
-                  : 'bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-[var(--color-soft)]',
+                  ? 'text-[var(--color-bg)]'
+                  : 'text-[var(--color-text)] hover:bg-[var(--color-soft)]',
               ].join(' ')}
             >
               {t('pricing.toggle.monthly')}
             </button>
             <button
               type="button"
-              onClick={() => setMode('oneOff')}
+              onClick={() => requestModeChange('oneOff')}
+              disabled={isSwitching}
+              aria-pressed={mode === 'oneOff'}
               className={[
-                'flex-1 px-4 py-3 uppercase tracking-[0.2em] text-[10px] font-semibold border-l border-[var(--color-border)] transition-none',
+                'relative z-10 flex-1 px-4 py-3 uppercase tracking-[0.2em] text-[10px] font-semibold border-l border-[var(--color-border)]',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)]/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]',
+                'disabled:opacity-70 disabled:cursor-not-allowed',
                 mode === 'oneOff'
-                  ? 'bg-[var(--color-text)] text-[var(--color-bg)]'
-                  : 'bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-[var(--color-soft)]',
+                  ? 'text-[var(--color-bg)]'
+                  : 'text-[var(--color-text)] hover:bg-[var(--color-soft)]',
               ].join(' ')}
             >
               {t('pricing.toggle.oneOff')}
@@ -75,7 +215,10 @@ export function PricingPage() {
         </section>
 
         {mode === 'monthly' ? (
-          <section className="grid grid-cols-1 lg:grid-cols-3 border-b border-[var(--color-border)]">
+          <section
+            ref={cardsRef}
+            className="grid grid-cols-1 lg:grid-cols-3 border-b border-[var(--color-border)]"
+          >
             {subscriptionTierKeys.map((key, idx) => {
               const featured = key === 'build'
               const name = t(`pricing.subscription.tiers.${key}.name`)
@@ -87,6 +230,7 @@ export function PricingPage() {
               return (
                 <article
                   key={key}
+                  data-pricing-card
                   className={[
                     'relative p-12 md:p-16 min-h-[620px] flex flex-col border-b lg:border-b-0',
                     idx < 2 ? 'lg:border-r border-[var(--color-border)]' : '',
@@ -109,6 +253,7 @@ export function PricingPage() {
                     {name}
                   </div>
                   <div
+                    data-price
                     className={[
                       'mt-8 font-serif font-black leading-[0.95] tracking-tight',
                       'text-[clamp(40px,4.8vw,58px)]',
@@ -156,12 +301,16 @@ export function PricingPage() {
             })}
           </section>
         ) : (
-          <section className="grid grid-cols-1 lg:grid-cols-3 border-b border-[var(--color-border)]">
+          <section
+            ref={cardsRef}
+            className="grid grid-cols-1 lg:grid-cols-3 border-b border-[var(--color-border)]"
+          >
             {oneOffItems.map((it, idx) => {
               const featured = idx === 1
               return (
                 <article
                   key={it.title}
+                  data-pricing-card
                   className={[
                     'relative p-12 md:p-16 min-h-[620px] flex flex-col border-b lg:border-b-0',
                     idx < 2 ? 'lg:border-r border-[var(--color-border)]' : '',
@@ -185,6 +334,7 @@ export function PricingPage() {
                     {it.title}
                   </div>
                   <div
+                    data-price
                     className={[
                       'mt-8 font-serif font-black leading-[0.95] tracking-tight',
                       'text-[clamp(40px,4.8vw,58px)]',

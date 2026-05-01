@@ -68,14 +68,14 @@
   "home": {
     "hero": {
       "kicker": "BLOC | LAB",
-      "h1": "Next.js & React weby bez balastu",
+      "h1": "STRUKTURA\nJE DESIGN.",
       "subheadline": "Minimalistické weby a webové aplikace. Praha. Globální delivery. Vlastní CMS v ceně."
     },
     "blocks": {
       "architecture": {
         "number": "01",
         "title": "Architecture",
-        "body": "Firemní weby, portfolia, startupy, SaaS, e-shop, webové aplikace. Čistý design. Rychlé buildy.",
+        "body": "Firemní weby, portfolia, startupy, SaaS, e-shop, webové aplikace. Čistý design.",
         "cta": "Prohlédnout"
       },
       "cms": {
@@ -87,7 +87,7 @@
       "pricing": {
         "number": "03",
         "title": "Ceník",
-        "body": "3 jasné balíčky. Dva seniorní devs. Žádný agenturní balast.",
+        "body": "Dva cenové modely. Jeden pro rychlost, jeden pro růst.",
         "cta": "Zobrazit balíčky"
       },
       "contact": {
@@ -98,27 +98,28 @@
       }
     },
     "featured": {
-      "title": "Featured index",
-      "cta": "Zobrazit vše"
+      "title": "Jak pracujeme"
     },
     "about": {
       "kicker": "O nás",
       "body": "Jsme dva seniorní FE vývojáři (oba Tomáš). Stavíme rychlé weby v Reactu/Next.js s minimalistickým, brutálním rukopisem a CMS, které udrží kvalitu i po spuštění."
     },
-    "capabilities": {
-      "kicker": "Capabilities",
-      "items": [
+    "howWeWork": {
+      "steps": [
         {
-          "title": "Engineering",
-          "desc": "Performance-first vývoj, čistá architektura a udržitelný kód."
+          "number": "01",
+          "title": "Discovery",
+          "body": "Nejdřív pochopíme cíl webu, zákazníky, obsah a priority. Žádné slepé designování bez kontextu."
         },
         {
-          "title": "Design systems",
-          "desc": "Přísný vizuální systém napříč každou stránkou i komponentou."
+          "number": "02",
+          "title": "Design & build",
+          "body": "Navrhneme strukturu, připravíme vizuál a postavíme rychlý, responzivní web připravený pro reálné používání."
         },
         {
-          "title": "Strategy",
-          "desc": "Jasná struktura a messaging pro konverze i SEO."
+          "number": "03",
+          "title": "Launch & care",
+          "body": "Pomůžeme se spuštěním, doménou, hostingem a dalšími úpravami podle zvoleného tarifu."
         }
       ]
     }

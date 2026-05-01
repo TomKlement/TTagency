@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -13,6 +13,12 @@ export function HomePage() {
   const { t } = useTranslation()
   const heroRef = useRef<HTMLDivElement | null>(null)
   const titleRef = useRef<HTMLHeadingElement | null>(null)
+  const pageRef = useRef<HTMLDivElement | null>(null)
+
+  const reduceMotion = useMemo(() => {
+    if (typeof window === 'undefined') return true
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
+  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -32,7 +38,11 @@ export function HomePage() {
         onUpdate(self) {
           if (!titleRef.current) return
           const t = self.progress
-          gsap.set(titleRef.current, { letterSpacing: `${t * 0.06}em`, scale: 1 - t * 0.04, opacity: 1 - t * 0.2 })
+          gsap.set(titleRef.current, {
+            letterSpacing: `${t * 0.085}em`,
+            scale: 1 - t * 0.06,
+            opacity: 1 - t * 0.18,
+          })
         },
       })
     }, heroRef)
@@ -40,8 +50,38 @@ export function HomePage() {
     return () => ctx.revert()
   }, [])
 
+  useEffect(() => {
+    if (reduceMotion) return
+    const root = pageRef.current
+    if (!root) return
+
+    const ctx = gsap.context(() => {
+      const els = gsap.utils.toArray<HTMLElement>('[data-reveal]')
+      if (els.length === 0) return
+
+      gsap.set(els, { autoAlpha: 0, y: 18, filter: 'blur(10px)' })
+
+      ScrollTrigger.batch(els, {
+        start: 'top 85%',
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            autoAlpha: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.6,
+            ease: 'power2.out',
+            stagger: 0.08,
+            clearProps: 'opacity,transform,visibility,filter',
+          })
+        },
+      })
+    }, root)
+
+    return () => ctx.revert()
+  }, [reduceMotion])
+
   return (
-    <div className="bg-[var(--color-bg)] text-[var(--color-text)]">
+    <div ref={pageRef} className="bg-[var(--color-bg)] text-[var(--color-text)]">
       <PageMeta pageKey="home" />
       <GeoJsonLd pageKey="home" faqKey="home" />
       <section
@@ -54,7 +94,7 @@ export function HomePage() {
           </p>
           <h1
             ref={titleRef}
-            className="font-serif font-black uppercase leading-[0.92] text-[clamp(58px,10vw,120px)] max-w-[980px]"
+            className="font-serif font-black uppercase leading-[0.92] text-[clamp(58px,10vw,120px)] max-w-[980px] whitespace-pre-line"
           >
             {t('home.hero.h1')}
           </h1>
@@ -68,6 +108,7 @@ export function HomePage() {
         <div className="grid grid-cols-12 gap-6">
           <Link
             to="/portfolio"
+            data-reveal
             className="group col-span-12 md:col-span-4 min-h-[360px] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 flex flex-col justify-between hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
           >
             <div>
@@ -89,6 +130,7 @@ export function HomePage() {
 
           <Link
             to="/cms-demo"
+            data-reveal
             className="group col-span-12 md:col-span-8 min-h-[360px] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 relative overflow-hidden"
           >
             <div className="absolute inset-0 opacity-20 group-hover:opacity-35">
@@ -114,6 +156,7 @@ export function HomePage() {
 
           <Link
             to="/pricing"
+            data-reveal
             className="group col-span-12 md:col-span-6 min-h-[300px] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 flex flex-col justify-between hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
           >
             <div>
@@ -132,6 +175,7 @@ export function HomePage() {
 
           <Link
             to="/contact"
+            data-reveal
             className="col-span-12 md:col-span-6 min-h-[300px] border border-[var(--color-border)] bg-[var(--color-inverse-bg)] text-[var(--color-inverse-text)] p-8 flex flex-col justify-between"
           >
             <div>
@@ -152,35 +196,33 @@ export function HomePage() {
       </section>
 
       <section className="border-y border-[var(--color-border)]">
-        <div className="max-w-[1440px] mx-auto p-8 border-x border-[var(--color-border)] flex items-end justify-between">
+        <div className="max-w-[1440px] mx-auto p-8 border-x border-[var(--color-border)]">
           <h2 className="font-serif font-black uppercase text-[32px] tracking-tight">{t('home.featured.title')}</h2>
-          <Link
-            className="uppercase tracking-[0.18em] text-[10px] underline hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] px-2 py-1"
-            to="/portfolio"
-          >
-            {t('home.featured.cta')}
-          </Link>
         </div>
       </section>
 
       <section className="max-w-[1440px] mx-auto border-x border-[var(--color-border)]">
         <div className="grid grid-cols-1 md:grid-cols-3">
-          {(t('home.capabilities.items', { returnObjects: true }) as Array<{ title: string; desc: string }>).map(
-            (c, idx) => (
-            <div
-              key={c.title}
-              className={[
-                'p-8 min-h-[260px]',
-                idx < 2 ? 'border-b md:border-b-0 md:border-r border-[var(--color-border)]' : '',
-              ].join(' ')}
-            >
-              <span className="uppercase tracking-[0.18em] text-[10px] text-[var(--color-muted)] block mb-12">
-                {t('home.capabilities.kicker')}
-              </span>
-              <h3 className="font-serif font-black uppercase text-[20px] tracking-tight">{c.title}</h3>
-              <p className="mt-4 text-[var(--color-muted)] text-[13px] leading-relaxed max-w-[44ch]">{c.desc}</p>
-            </div>
-          ),
+          {(t('home.howWeWork.steps', { returnObjects: true }) as Array<{ number: string; title: string; body: string }>).map(
+            (step, idx) => (
+              <div
+                key={`${step.number}-${step.title}`}
+                data-reveal
+                className={[
+                  'p-8 min-h-[260px]',
+                  idx < 2 ? 'border-b md:border-b-0 md:border-r border-[var(--color-border)]' : '',
+                ].join(' ')}
+              >
+                <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--color-muted)]">
+                  <span>{step.number}</span>
+                  <span className="mx-2 opacity-35" aria-hidden>
+                    /
+                  </span>
+                  <span className="text-[var(--color-text)]">{step.title}</span>
+                </div>
+                <p className="mt-10 text-[13px] leading-relaxed text-[var(--color-muted)] max-w-[44ch]">{step.body}</p>
+              </div>
+            ),
           )}
         </div>
       </section>

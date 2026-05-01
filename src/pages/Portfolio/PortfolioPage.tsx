@@ -1,6 +1,11 @@
+import { useEffect, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
+
+gsap.registerPlugin(ScrollTrigger)
 
 type CaseStudy = {
   number: string
@@ -16,6 +21,7 @@ type CaseStudy = {
 function CaseStudyCard({ study, viewSiteText, viewSiteAria }: { study: CaseStudy; viewSiteText: string; viewSiteAria: string }) {
   return (
     <article
+      data-reveal
       className={`group flex flex-col justify-between border-b border-r border-[var(--color-border)] bg-[var(--color-surface)] p-8 transition-colors duration-200 hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] ${study.className}`}
     >
       <div className="flex items-start justify-between gap-6 text-[10px] font-bold uppercase tracking-[0.24em]">
@@ -51,6 +57,13 @@ function CaseStudyCard({ study, viewSiteText, viewSiteAria }: { study: CaseStudy
 
 export function PortfolioPage() {
   const { t } = useTranslation()
+  const gridRef = useRef<HTMLElement | null>(null)
+
+  const reduceMotion = useMemo(() => {
+    if (typeof window === 'undefined') return true
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
+  }, [])
+
   const caseStudies = (t('portfolio.caseStudies', { returnObjects: true }) as Array<Omit<CaseStudy, 'className'>>).map(
     (s, idx) => ({
       ...s,
@@ -71,6 +84,36 @@ export function PortfolioPage() {
   const featuredStudies = caseStudies.slice(0, 3)
   const remainingStudies = caseStudies.slice(3)
 
+  useEffect(() => {
+    if (reduceMotion) return
+    const root = gridRef.current
+    if (!root) return
+
+    const ctx = gsap.context(() => {
+      const els = gsap.utils.toArray<HTMLElement>('[data-reveal]')
+      if (els.length === 0) return
+
+      gsap.set(els, { autoAlpha: 0, y: 18, filter: 'blur(10px)' })
+
+      ScrollTrigger.batch(els, {
+        start: 'top 86%',
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            autoAlpha: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.6,
+            ease: 'power2.out',
+            stagger: 0.08,
+            clearProps: 'opacity,transform,visibility,filter',
+          })
+        },
+      })
+    }, root)
+
+    return () => ctx.revert()
+  }, [reduceMotion])
+
   return (
     <div className="border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text)]">
       <PageMeta pageKey="portfolio" />
@@ -82,7 +125,10 @@ export function PortfolioPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 border-l border-t border-[var(--color-border)] md:grid-cols-3">
+      <section
+        ref={gridRef}
+        className="relative grid grid-cols-1 border-l border-t border-[var(--color-border)] md:grid-cols-3"
+      >
         {featuredStudies.map((study) => (
           <CaseStudyCard
             key={study.number}
@@ -92,7 +138,10 @@ export function PortfolioPage() {
           />
         ))}
 
-        <div className="flex min-h-[340px] items-center border-b border-r border-[var(--color-border)] bg-[var(--color-bg)] p-8 md:col-span-2">
+        <div
+          data-reveal
+          className="flex min-h-[340px] items-center border-b border-r border-[var(--color-border)] bg-[var(--color-bg)] p-8 md:col-span-2"
+        >
           <p className="font-serif font-black text-[clamp(40px,6vw,92px)] uppercase leading-[0.9] tracking-tight">
             {t('portfolio.slogan')
               .split('\n')
