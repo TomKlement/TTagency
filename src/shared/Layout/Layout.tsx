@@ -2,7 +2,8 @@ import type { ReactNode } from 'react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useLenis } from '../motion/useLenis'
+import { scrollDocumentToTop, useLenis } from '../motion/useLenis'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { BrandMark } from '../brand/BrandMark'
 
 const navItems = [
@@ -51,7 +52,11 @@ export function Layout({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    scrollDocumentToTop({ immediate: true })
+    const id = requestAnimationFrame(() => {
+      ScrollTrigger.refresh()
+    })
+    return () => cancelAnimationFrame(id)
   }, [location.pathname])
 
   const toggleTheme = () => {
