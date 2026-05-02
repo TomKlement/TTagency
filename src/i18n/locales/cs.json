@@ -81,7 +81,7 @@
       "cms": {
         "number": "02",
         "title": "CMS Demo",
-        "body": "Vlastní CMS + šablony v ceně. Obsah upravíte sami a design zůstane konzistentní.",
+        "body": "Texty a obrázky si upravíte sami. My pohlídáme, aby se web nerozpadl vizuálně ani technicky.",
         "cta": "Spustit demo"
       },
       "pricing": {
@@ -100,26 +100,22 @@
     "featured": {
       "title": "Jak pracujeme"
     },
-    "about": {
-      "kicker": "O nás",
-      "body": "Jsme dva seniorní FE vývojáři (oba Tomáš). Stavíme rychlé weby v Reactu/Next.js s minimalistickým, brutálním rukopisem a CMS, které udrží kvalitu i po spuštění."
-    },
     "howWeWork": {
       "steps": [
         {
           "number": "01",
           "title": "Discovery",
-          "body": "Nejdřív pochopíme cíl webu, zákazníky, obsah a priority. Žádné slepé designování bez kontextu."
+          "body": "Nejdřív si ujasníme, co má web prodávat, komu je určený a co na něm opravdu musí být."
         },
         {
           "number": "02",
           "title": "Design & build",
-          "body": "Navrhneme strukturu, připravíme vizuál a postavíme rychlý, responzivní web připravený pro reálné používání."
+          "body": "Navrhneme strukturu, vzhled a postavíme web tak, aby dobře vypadal na mobilu, rychle se načítal a vedl lidi ke kontaktu."
         },
         {
           "number": "03",
           "title": "Launch & care",
-          "body": "Pomůžeme se spuštěním, doménou, hostingem a dalšími úpravami podle zvoleného tarifu."
+          "body": "Vyřešíme spuštění, hosting, doménu i další úpravy. Můžete to nechat celé na nás, nebo si web spravovat sami."
         }
       ]
     }
@@ -210,11 +206,11 @@
         ]
       }
     ],
-    "cta": "Chcete tohle CMS na svůj web? Pojďme to postavit."
+    "cta": "Chcete web, který si zvládnete upravovat sami? Napište nám."
   },
   "pricing": {
-    "h1": "Ceník bez omáčky",
-    "subheadline": "Dva směry: rychlý web ze šablony (jednorázově nebo měsíčně) a prémiové custom řešení pro individuální potřeby. Držíme design. Držíme výkon.",
+    "h1": "Vyberte si web podle toho, jak ho chcete používat",
+    "subheadline": "Můžete začít rychle na šabloně, platit měsíčně, nebo si nechat navrhnout web úplně na míru.",
     "toggle": {
       "monthly": "Měsíčně",
       "oneOff": "Jednorázově"
@@ -228,12 +224,12 @@
     },
     "subscription": {
       "kicker": "Měsíčně",
-      "intro": "Web jako služba. V ceně vytvoření na šabloně, provoz, hosting i doména. Minimální závazek 12 měsíců.",
+      "intro": "Web bez velké počáteční investice. Postavíme ho na šabloně, zařídíme provoz, hosting i doménu. Vy platíte měsíčně.",
       "tiers": {
         "foundation": {
           "name": "Start",
           "price": "490 Kč / měs",
-          "blurb": "Jednoduchý prezentační web ze šablony. Obsah na vyžádání upravujeme my.",
+          "blurb": "Jednoduchý web pro živnostníka nebo malou firmu. Vybereme šablonu, doplníme obsah a změny řešíme za Vás dle domluvy.",
           "features": [
             "Výběr ze 3 šablon (one-page / vícestránková / designová)",
             "Hosting + doména v ceně",
@@ -246,7 +242,7 @@
         "build": {
           "name": "Start CMS",
           "price": "790 Kč / měs",
-          "blurb": "Vše z tarifu Start a navíc vlastní editor — texty, bloky a obrázky si můžete upravit sami.",
+          "blurb": "Stejný základ jako Start, ale s editorem. Texty, obrázky a vybrané sekce si upravíte i sami.",
           "features": [
             "Vše z tarifu Start",
             "Vlastní CMS editor — texty, bloky, obrázky si můžete upravit sami",
@@ -258,7 +254,7 @@
         "scale": {
           "name": "Business CMS",
           "price": "1 090 Kč / měs",
-          "blurb": "Vše z tarifu Start CMS, prioritní podpora a možnost rozšíření o další moduly dle potřeby.",
+          "blurb": "Pro web, který má růst. CMS, prioritní podpora a prostor pro další sekce, jazykové verze nebo nové funkce.",
           "features": [
             "Vše z tarifu Start CMS",
             "Prioritní podpora",
@@ -271,13 +267,13 @@
     },
     "oneOff": {
       "kicker": "Jednorázově",
-      "intro": "Zaplatíte jednou a web je váš. Bez povinných měsíčních poplatků. Provoz (doména + hosting) můžete řešit sami nebo nechat na nás.",
+      "intro": "Zaplatíte jednou a web je váš. Hosting a doménu si můžete řešit sami, nebo nám nechat technickou správu za roční poplatek.",
       "items": [
         {
           "title": "Web ze šablony",
           "pricePrefix": "od",
           "price": "6 000 Kč",
-          "blurb": "Rychlá varianta pro živnostníky a malé podnikání. Vybereme šablonu, doplníme obsah, doladíme základní styl a jde se ven.",
+          "blurb": "Nejrychlejší cesta k čistému webu. Vybereme vhodnou šablonu, doplníme texty, upravíme barvy/logo a spustíme.",
           "features": [
             "Web na naší šabloně + základní úpravy (barvy/logo)",
             "Doplnění obsahu + úprava klíčových údajů",
@@ -303,7 +299,7 @@
           "title": "Webová aplikace / interní systém",
           "pricePrefix": "od",
           "price": "50 000 Kč",
-          "blurb": "Když nestačí web. Rezervace, portály, dashboardy, interní nástroje, API integrace. Scope a cena vždy po konzultaci.",
+          "blurb": "Projekty, kde už nestačí prezentační web. Rezervace, dashboardy, klientské portály, interní systémy nebo napojení na API.",
           "features": [
             "Návrh scope + technická architektura",
             "UI systém + core flow",
@@ -332,8 +328,8 @@
     }
   },
   "contact": {
-    "h1": "Pojďme to postavit dobře",
-    "body": "Pošlete krátké zadání (co potřebujete, termín, odkazy, reference). Ozveme se s postupem a realistickým odhadem.",
+    "h1": "Pošlete nám zadání. Řekneme vám, co dává smysl.",
+    "body": "Stačí napsat, co potřebujete, kdy to chcete spustit a poslat pár webů, které se vám líbí. Ozveme se s návrhem postupu a orientační cenou.",
     "emailLabel": "E-mail",
     "form": {
       "nameLabel": "Jméno",

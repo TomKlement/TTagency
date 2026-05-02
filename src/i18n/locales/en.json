@@ -81,7 +81,7 @@
       "cms": {
         "number": "02",
         "title": "CMS Demo",
-        "body": "A custom CMS + templates included. Edit content safely while keeping the design system intact.",
+        "body": "You edit text and images yourself. We keep your site from breaking—visually or technically.",
         "cta": "Initialize Demo"
       },
       "pricing": {
@@ -100,26 +100,22 @@
     "featured": {
       "title": "How we work"
     },
-    "about": {
-      "kicker": "About",
-      "body": "We’re two senior front-end developers (both Tomáš). We design and build high-performing React / Next.js websites with a brutal, minimalist edge—and a CMS that keeps them sharp over time."
-    },
     "howWeWork": {
       "steps": [
         {
           "number": "01",
           "title": "Discovery",
-          "body": "First, we align on the site’s goals, audience, content, and priorities. No designing in the dark without context."
+          "body": "First, we clarify what the site should sell, who it’s for, and what absolutely has to be on it."
         },
         {
           "number": "02",
           "title": "Design & build",
-          "body": "We shape the structure, refine the visuals, and ship a fast, responsive site that’s ready for real use."
+          "body": "We design the structure and look, and build the site so it looks great on mobile, loads fast, and leads people to get in touch."
         },
         {
           "number": "03",
           "title": "Launch & care",
-          "body": "We help with launch basics—domain, hosting, and ongoing updates depending on the plan you choose."
+          "body": "We handle launch, hosting, the domain, and follow-up changes. You can leave it all with us, or run the site yourself."
         }
       ]
     }
@@ -210,11 +206,11 @@
         ]
       }
     ],
-    "cta": "Want this CMS on your site? Let’s build it."
+    "cta": "Want a website you can update yourself? Get in touch."
   },
   "pricing": {
-    "h1": "Pricing that stays honest",
-    "subheadline": "Two tracks: fast template websites (one-off or monthly) and premium custom builds for teams that need something individual. Same brutal clarity. Better fit.",
+    "h1": "Choose your website based on how you’ll use it",
+    "subheadline": "Start fast on a template and pay monthly, or have your site designed completely bespoke.",
     "toggle": {
       "monthly": "Monthly",
       "oneOff": "One-off"
@@ -228,12 +224,12 @@
     },
     "subscription": {
       "kicker": "Monthly",
-      "intro": "Web as a service. Price includes creation on a template, operation, hosting and domain. Minimum commitment 12 months.",
+      "intro": "A website without a large upfront investment. We build it on a template, handle operations, hosting, and the domain. You pay monthly.",
       "tiers": {
         "foundation": {
           "name": "Start",
           "price": "490 CZK / mo",
-          "blurb": "A simple brochure-style site from a template. We handle content updates on request.",
+          "blurb": "A simple site for freelancers or small businesses. We pick a template, fill in the content, and handle changes for you by agreement.",
           "features": [
             "Pick from 3 templates (one-page / multi-page / design-led)",
             "Hosting + domain included",
@@ -246,7 +242,7 @@
         "build": {
           "name": "Start CMS",
           "price": "790 CZK / mo",
-          "blurb": "Everything in Start, plus your own editor — you can edit text, blocks, and images yourself.",
+          "blurb": "The same foundation as Start, but with an editor. You can also update text, images, and selected sections yourself.",
           "features": [
             "Everything in Start",
             "CMS editor — you can edit text, blocks, and images yourself",
@@ -258,7 +254,7 @@
         "scale": {
           "name": "Business CMS",
           "price": "1,090 CZK / mo",
-          "blurb": "Everything in Start CMS, priority support, and optional extra modules as needed.",
+          "blurb": "For a site that needs to grow. CMS, priority support, and room for more sections, language versions, or new features.",
           "features": [
             "Everything in Start CMS",
             "Priority support",
@@ -271,13 +267,13 @@
     },
     "oneOff": {
       "kicker": "One-off",
-      "intro": "Pay once, the website is yours. No mandatory monthly fee. You can run it yourself, or we can handle domain + hosting as an optional add-on.",
+      "intro": "Pay once, the website is yours. You can handle hosting and the domain yourself, or leave ongoing technical care with us for an annual fee.",
       "items": [
         {
           "title": "Template website",
           "pricePrefix": "from",
           "price": "6,000 CZK",
-          "blurb": "A fast option for freelancers and small businesses. Pick a template, we plug in your content, and launch.",
+          "blurb": "The fastest path to a clean website. We pick a suitable template, add your copy, adjust colors and logo, and launch.",
           "features": [
             "Built on our template + basic visual tweaks (colors/logo)",
             "Content setup + key details",
@@ -303,7 +299,7 @@
           "title": "Web app / internal system",
           "pricePrefix": "from",
           "price": "50,000 CZK",
-          "blurb": "When a brochure site isn’t enough. Bookings, portals, dashboards, internal tools, API integrations. Scope and pricing always after a consult.",
+          "blurb": "Projects where a brochure site is no longer enough. Bookings, dashboards, client portals, internal systems, or API connections.",
           "features": [
             "Scope definition + technical architecture",
             "UI system + core flows",
@@ -332,8 +328,8 @@
     }
   },
   "contact": {
-    "h1": "Let’s build something sharp",
-    "body": "Send a short brief (what you need, timeline, links, and any references). We’ll reply with next steps and a realistic estimate.",
+    "h1": "Send us a brief. We’ll tell you what makes sense.",
+    "body": "Just tell us what you need, when you want to launch, and share a few websites you like. We’ll reply with a proposed approach and a ballpark price.",
     "emailLabel": "Email",
     "form": {
       "nameLabel": "Name",
