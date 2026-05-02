@@ -276,9 +276,7 @@
           "blurb": "Nejrychlejší cesta k čistému webu. Vybereme vhodnou šablonu, doplníme texty, upravíme barvy/logo a spustíme.",
           "features": [
             "Web na naší šabloně + základní úpravy (barvy/logo)",
-            "Doplnění obsahu + úprava klíčových údajů",
-            "Jednorázová platba",
-            "Volitelně doména + hosting od 990 Kč/rok"
+            "Doplnění obsahu + úprava klíčových údajů"
           ],
           "cta": "Chci web ze šablony"
         },
@@ -290,8 +288,7 @@
           "features": [
             "Custom design + jasná struktura stránky",
             "Next.js/React build + možnost napojení na naše CMS",
-            "Silnější obsah, typografie a konverzní flow dle cíle",
-            "Přímá práce se seniory"
+            "Silnější obsah, typografie a konverzní flow dle cíle"
           ],
           "cta": "Chci custom web"
         },

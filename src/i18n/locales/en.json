@@ -276,9 +276,7 @@
           "blurb": "The fastest path to a clean website. We pick a suitable template, add your copy, adjust colors and logo, and launch.",
           "features": [
             "Built on our template + basic visual tweaks (colors/logo)",
-            "Content setup + key details",
-            "One-time payment",
-            "Optional domain + hosting from 990 CZK/year"
+            "Content setup + key details"
           ],
           "cta": "Get a template site"
         },
@@ -286,12 +284,11 @@
           "title": "Custom build",
           "pricePrefix": "from",
           "price": "25,000 CZK",
-          "blurb": "Individual structure and custom design — more work on content, UX, and brand than a template site. Next.js/React, optional integration with our CMS, and direct senior communication — no WordPress stack, no outsourcing.",
+          "blurb": "A website designed from scratch. Custom structure, custom visuals, thoughtful content, and a technical foundation that won't hold you back as you grow.",
           "features": [
             "Custom design + clear page structure",
             "Next.js/React build + optional CMS integration",
-            "Stronger content, typography, and goal-driven conversion flow",
-            "Direct senior communication"
+            "Stronger content, typography, and goal-driven conversion flow"
           ],
           "cta": "Get custom web"
         },
