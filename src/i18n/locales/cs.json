@@ -122,7 +122,7 @@
   },
   "portfolio": {
     "h1": "Vybrané projekty",
-    "intro": "Ukázky, které definují náš přístup: brutal clarity, typografie, čistý motion a obsah řízený přes CMS.",
+    "intro": "Ukázky webů, kde design není dekorace, ale nástroj pro jasnější komunikaci a lepší první dojem.",
     "slogan": "FORM\nFOLLOWS\nRESULTS.",
     "caseStudies": [
       {
@@ -178,7 +178,7 @@
   },
   "cmsDemo": {
     "h1": "CMS demo — obsah měníte vy, design zůstává",
-    "intro": "Naše CMS je postavené na kontrolu a rychlost. Dostanete bezpečné šablony, modulární sekce a strukturu pro SEO bez chaosu v designu.",
+    "intro": "Dostanete web, který můžete upravovat sami — bez toho, aby se z něj po měsíci stal vizuální chaos.",
     "button": "Spustit náhled",
     "templates": [
       {
@@ -286,7 +286,7 @@
           "title": "Custom web",
           "pricePrefix": "od",
           "price": "25 000 Kč",
-          "blurb": "Individuální struktura, vlastní design a víc práce s obsahem, UX a značkou než u šablony. Next.js/React, volitelné napojení na naše CMS a přímá komunikace se seniory — bez WordPressu a bez outsourcování.",
+          "blurb": "Web navržený od nuly. Vlastní struktura, vlastní vizuál, promyšlený obsah a technické řešení, které vás nebude brzdit při růstu.",
           "features": [
             "Custom design + jasná struktura stránky",
             "Next.js/React build + možnost napojení na naše CMS",
