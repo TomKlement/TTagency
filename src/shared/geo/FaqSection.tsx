@@ -10,7 +10,7 @@ export type FaqKey = 'home' | 'portfolio' | 'cmsDemo' | 'pricing' | 'contact'
 type FaqItem = { q: string; a: string }
 
 export function FaqSection({ faqKey }: { faqKey: FaqKey }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const items = t(`faq.${faqKey}`, { returnObjects: true }) as FaqItem[]
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const sectionId = useId()
@@ -67,6 +67,12 @@ export function FaqSection({ faqKey }: { faqKey: FaqKey }) {
     setOpenIndex((current) => (current === index ? null : index))
   }
 
+  // New FAQ DOM (e.g. language change swaps `key={it.q}`) must re-run GSAP init; `didInitPanelsRef` would otherwise stay true and leave panels at full height.
+  useEffect(() => {
+    didInitPanelsRef.current = false
+    prevOpenIndexRef.current = null
+  }, [i18n.language, faqKey])
+
   useEffect(() => {
     if (reduceMotion) return
     if (didInitPanelsRef.current) return
@@ -83,7 +89,7 @@ export function FaqSection({ faqKey }: { faqKey: FaqKey }) {
         gsap.set(p, { height: 0, autoAlpha: 0, filter: 'blur(6px)' })
       }
     })
-  }, [openIndex, reduceMotion])
+  }, [openIndex, reduceMotion, i18n.language, faqKey])
 
   useEffect(() => {
     if (reduceMotion) return
@@ -179,7 +185,7 @@ export function FaqSection({ faqKey }: { faqKey: FaqKey }) {
                     <div className="border-t border-[var(--color-border)] px-5 pb-5 pt-4 md:px-6 md:pb-6 md:pt-5">
                       <div className="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-x-3 md:gap-x-4">
                         <span className="select-none" aria-hidden />
-                        <p className="font-sans text-[12px] normal-case leading-relaxed tracking-normal text-[var(--color-muted)] md:text-[13px]">
+                        <p className="whitespace-pre-line font-sans text-[12px] normal-case leading-relaxed tracking-normal text-[var(--color-muted)] md:text-[13px]">
                           {it.a}
                         </p>
                       </div>

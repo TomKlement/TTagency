@@ -4,56 +4,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
+import { CaseStudyCard } from '../../portfolio'
+import type { CaseStudy } from '../../portfolio'
 
 gsap.registerPlugin(ScrollTrigger)
-
-type CaseStudy = {
-  number: string
-  title: string
-  category: string
-  year: string
-  description: string
-  result: string
-  href: string
-  className: string
-}
-
-function CaseStudyCard({ study, viewSiteText, viewSiteAria }: { study: CaseStudy; viewSiteText: string; viewSiteAria: string }) {
-  return (
-    <article
-      data-reveal
-      className={`group flex flex-col justify-between border-b border-r border-[var(--color-border)] bg-[var(--color-surface)] p-8 transition-colors duration-200 hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] ${study.className}`}
-    >
-      <div className="flex items-start justify-between gap-6 text-[10px] font-bold uppercase tracking-[0.24em]">
-        <span>{study.number}</span>
-        <span>{study.year}</span>
-      </div>
-
-      <div className="mt-16">
-        <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--color-muted)] transition-colors duration-200 group-hover:text-[var(--color-bg)]">
-          {study.category}
-        </p>
-        <h2 className="font-serif font-black text-[clamp(32px,4vw,64px)] uppercase leading-[0.95] tracking-tight">
-          {study.title}
-        </h2>
-        <p className="mt-6 max-w-[38ch] text-[13px] leading-relaxed text-[var(--color-muted)] transition-colors duration-200 group-hover:text-[var(--color-bg)]">
-          {study.description}
-        </p>
-      </div>
-
-      <div className="mt-12 flex items-center justify-between gap-6 border-t border-[var(--color-border)] pt-5 text-[11px] font-bold uppercase tracking-[0.22em] transition-colors duration-200 group-hover:border-[var(--color-bg)]">
-        <span>{study.result}</span>
-        <a
-          href={study.href}
-          aria-label={viewSiteAria}
-          className="shrink-0 transition-opacity duration-200 hover:opacity-60"
-        >
-          {viewSiteText} <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </article>
-  )
-}
 
 export function PortfolioPage() {
   const { t } = useTranslation()

@@ -30,7 +30,7 @@
       "cs": "CZ"
     },
     "faq": {
-      "h2": "FREQUENTLY\nASKED"
+      "h2": "Frequent\nquestions"
     }
   },
   "meta": {
@@ -69,7 +69,7 @@
     "hero": {
       "kicker": "BLOC | LAB",
       "h1": "STRUCTURE\nIS THE\nDESIGN.",
-      "subheadline": "Minimal, architectural websites and web apps. Built in Prague. Shipped worldwide. Own CMS included."
+      "subheadline": "Minimal, architectural websites and web apps. Shipped worldwide. Own CMS included."
     },
     "blocks": {
       "architecture": {
@@ -131,6 +131,17 @@
     "caseStudies": [
       {
         "number": "01",
+        "title": "MP DETAILING",
+        "category": "Auto detailing — service site",
+        "year": "2025",
+        "description": "Premium auto detailing positioning: paint correction, ceramic coating, and interior care, structured package pricing, a strong work gallery, and clear contact paths including booking.",
+        "result": "Services · Pricing · Gallery",
+        "href": "https://mpdetailing.cz/",
+        "previewSrc": "/portfolio/previews/mp-detailing.png",
+        "previewGhostLayout": "cover"
+      },
+      {
+        "number": "02",
         "title": "BRUT FORM",
         "category": "Architecture studio site",
         "year": "2026",
@@ -139,7 +150,7 @@
         "href": "#"
       },
       {
-        "number": "02",
+        "number": "03",
         "title": "NORTHWIND SaaS",
         "category": "Product marketing + docs",
         "year": "2026",
@@ -148,7 +159,7 @@
         "href": "#"
       },
       {
-        "number": "03",
+        "number": "04",
         "title": "MONO MARKET",
         "category": "E-commerce concept",
         "year": "2025",
@@ -157,21 +168,12 @@
         "href": "#"
       },
       {
-        "number": "04",
+        "number": "05",
         "title": "BLOC CMS DEMO",
         "category": "Template system",
         "year": "2026",
         "description": "Three templates, reusable sections, editorial controls, and safe typography scale.",
         "result": "Onyx / Monolith / Aether",
-        "href": "#"
-      },
-      {
-        "number": "05",
-        "title": "MONOLITH SITE",
-        "category": "Enterprise web system",
-        "year": "2026",
-        "description": "A bold business site with strong hierarchy, structured pages, and scalable components.",
-        "result": "Scalable sections",
         "href": "#"
       }
     ],
@@ -226,29 +228,28 @@
     },
     "subscription": {
       "kicker": "Monthly",
-      "intro": "Website as a service. The monthly plan includes setup on our template, hosting, and domain. Minimum 12-month commitment (so the initial build/setup pays for itself).",
+      "intro": "Web as a service. Price includes creation on a template, operation, hosting and domain. Minimum commitment 12 months.",
       "tiers": {
         "foundation": {
           "name": "Start",
-          "price": "from 490 CZK / mo",
-          "blurb": "A simple template website. You send the content, we ship it. No self-serve editor.",
+          "price": "490 CZK / mo",
+          "blurb": "A simple brochure-style site from a template. We handle content updates on request.",
           "features": [
-            "Template website + basic setup",
+            "Pick from 3 templates (one-page / multi-page / design-led)",
             "Hosting + domain included",
-            "Core pages (home / services / contact)",
-            "Content updates handled by us (on request)",
+            "Core pages (home, services, contact)",
+            "Content updates by us on request",
             "12-month minimum commitment"
           ],
           "cta": "Get Start"
         },
         "build": {
           "name": "Start CMS",
-          "price": "from 790 CZK / mo",
-          "blurb": "Same base, but with a CMS/editor. Edit content without breaking the design system.",
+          "price": "790 CZK / mo",
+          "blurb": "Everything in Start, plus your own editor — you can edit text, blocks, and images yourself.",
           "features": [
-            "Template website + CMS/editor",
-            "Hosting + domain included",
-            "Editable content (text, blocks, images)",
+            "Everything in Start",
+            "CMS editor — you can edit text, blocks, and images yourself",
             "Basic SEO setup",
             "12-month minimum commitment"
           ],
@@ -256,13 +257,12 @@
         },
         "scale": {
           "name": "Business CMS",
-          "price": "from 1,090 CZK / mo",
-          "blurb": "A larger template-based website for companies: more sections/modules, more room to scale content.",
+          "price": "1,090 CZK / mo",
+          "blurb": "Everything in Start CMS, priority support, and optional extra modules as needed.",
           "features": [
-            "Larger template website + CMS",
-            "More sections/modules (as agreed)",
-            "Blog / references / gallery (if needed)",
-            "Hosting + domain included",
+            "Everything in Start CMS",
+            "Priority support",
+            "Option to extend with additional modules as needed",
             "12-month minimum commitment"
           ],
           "cta": "Get Business"
@@ -275,37 +275,40 @@
       "items": [
         {
           "title": "Template website",
-          "price": "from 6,000 CZK",
+          "pricePrefix": "from",
+          "price": "6,000 CZK",
           "blurb": "A fast option for freelancers and small businesses. Pick a template, we plug in your content, and launch.",
           "features": [
             "Built on our template + basic visual tweaks (colors/logo)",
             "Content setup + key details",
-            "No mandatory monthly fee",
+            "One-time payment",
             "Optional domain + hosting from 990 CZK/year"
           ],
           "cta": "Get a template site"
         },
         {
-          "title": "Premium custom website",
-          "price": "from 30,000 CZK",
-          "blurb": "Custom design, individual structure, and more work on UX/content and brand presentation. For teams who don’t want “just a template”.",
+          "title": "Custom build",
+          "pricePrefix": "from",
+          "price": "25,000 CZK",
+          "blurb": "Individual structure and custom design — more work on content, UX, and brand than a template site. Next.js/React, optional integration with our CMS, and direct senior communication — no WordPress stack, no outsourcing.",
           "features": [
             "Custom design + clear page structure",
-            "Stronger work on content + typography",
-            "UX and conversion flow based on your goals",
-            "Optional integration with our CMS"
+            "Next.js/React build + optional CMS integration",
+            "Stronger content, typography, and goal-driven conversion flow",
+            "Direct senior communication"
           ],
-          "cta": "Discuss custom"
+          "cta": "Get custom web"
         },
         {
           "title": "Web app / internal system",
-          "price": "from 50,000 CZK",
-          "blurb": "Bookings, client portals, dashboards, records, calculators, API integrations, or a lightweight CRM. Price depends on scope after a consult.",
+          "pricePrefix": "from",
+          "price": "50,000 CZK",
+          "blurb": "When a brochure site isn’t enough. Bookings, portals, dashboards, internal tools, API integrations. Scope and pricing always after a consult.",
           "features": [
             "Scope definition + technical architecture",
             "UI system + core flows",
             "Integrations (API, DB) as needed",
-            "Fair phasing when it makes sense"
+            "Phased delivery based on scope"
           ],
           "cta": "Discuss the build"
         }
@@ -404,11 +407,10 @@
   },
   "faq": {
     "home": [
-      { "q": "Can you recommend a Next.js agency in Prague?", "a": "BLOC | LAB is a Prague-based Next.js and React web studio. We’re two senior front-end developers (both named Tomáš) and work directly with clients without agency layers. We ship English-first websites for Czech and international teams." },
-      { "q": "Is BLOC | LAB an agency or freelancers?", "a": "BLOC | LAB is a small studio run by two senior developers. You communicate directly with the people who design and build your site. No account managers, no outsourcing." },
-      { "q": "Do you build websites for freelancers and sole traders in the Czech Republic?", "a": "Yes. We build fast, minimal websites for freelancers and small businesses, including service pages, contact flows, and an SEO-ready structure. If you want, we can include our CMS for self-editing." },
+      { "q": "Is BLOC | LAB an agency or freelancers?", "a": "We’re a smaller studio. No account managers or outsourcing—you work directly with the people who build your project." },
+      { "q": "For freelancers and sole traders too?", "a": "Yes. We build fast, minimal websites for freelancers and small businesses, including service pages, contact flows, and an SEO-ready structure. If you want, we can include our CMS for self-editing." },
       { "q": "What stack do you use?", "a": "We build in Next.js and React. Many projects include our own CMS with templates so content can be edited safely. The goal is a clean system that stays maintainable." },
-      { "q": "Where are you based and do you work internationally?", "a": "We’re based in Prague, Czech Republic. We work with clients in CZ/SK, Western Europe, and the US. The site can be English-first, with Czech as a secondary language." }
+      { "q": "Where are you based and do you work internationally?", "a": "We work across the Czech Republic; meetings are possible in Prague and Brno, or online.\n\nWe also take on international projects." }
     ],
     "portfolio": [
       { "q": "What kind of projects appear in your portfolio?", "a": "Mostly websites and systems built in Next.js/React: portfolios, company sites, SaaS marketing, and CMS-driven templates. Some entries are studio concepts used to show layout and component systems." },
@@ -426,14 +428,13 @@
     ],
     "pricing": [
       { "q": "Are you the cheapest option in Prague?", "a": "No. We’re positioned in the middle of the market: fair pricing for senior work, without a large agency team. You pay for direct delivery and maintainable code." },
-      { "q": "How do you price projects?", "a": "We offer two models: subscription capacity (monthly bandwidth) and one-off fixed-scope builds. Subscription works best when you want ongoing iteration; one-off is best for a clear launch deliverable. We’ll align on scope before starting." },
-      { "q": "What is usually included in the price?", "a": "For one-off builds: design + build in Next.js/React, a structured page system, and launch-ready basics. For subscription: continuous delivery within the agreed capacity. Many projects include our CMS templates for safe editing." },
-      { "q": "How long does a typical website take?", "a": "Small websites can be shipped in weeks, not months, if content and scope are clear. More complex systems take longer and are usually phased. We’ll confirm timing after a short brief." },
-      { "q": "Do you offer a CMS-only setup for an existing site?", "a": "Sometimes. If the existing build fits a structured template system, we can integrate our CMS and migrate content. We’ll need to review the current codebase first." }
+      { "q": "How do you price projects?", "a": "We have two models: a monthly subscription and a one-off project. Subscription fits you if you want to keep evolving the site. A one-off project fits a clearly bounded scope. We always discuss scope upfront." },
+      { "q": "What is usually included in the price?", "a": "One-off project: design and development in Next.js/React, a structured page system, and everything needed for go-live. Monthly collaboration: ongoing work within the agreed capacity. Many projects also include our CMS with templates for editing." },
+      { "q": "How long does a typical website take?", "a": "Small websites can be shipped in weeks, not months, if content and scope are clear. More complex systems take longer and are usually phased. We’ll confirm timing after a short brief." }
     ],
     "contact": [
       { "q": "How do I contact BLOC | LAB?", "a": "Email us at hello@bloclab.dev. Send a short brief: what you need, timeline, links, and any references. We’ll reply with next steps and a realistic estimate." },
-      { "q": "Do you work with Czech and English clients?", "a": "Yes. We’re Prague-based and work in English with international teams. We can deliver English-first websites and add Czech as a second language." },
+      { "q": "Do you work with Czech and English clients?", "a": "Yes. We’re based in Prague and Brno, and work in English with international teams. We can deliver English-first websites and add Czech as a second language." },
       { "q": "What information should I include in my message?", "a": "Your goal, what pages or features you need, examples you like, and your timeline. If you have existing brand assets or content, include links. That’s enough for a first estimate." },
       { "q": "Can you build a site for a sole trader in the Czech Republic?", "a": "Yes. We often build fast, minimal sites for freelancers and small businesses. We’ll recommend the simplest scope that still looks and performs premium." },
       { "q": "Do you provide ongoing support after launch?", "a": "Yes, depending on what you need. Many clients use the CMS for day-to-day changes, and we can support larger updates or new sections. We’ll agree on the support model upfront." }

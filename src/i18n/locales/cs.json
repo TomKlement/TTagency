@@ -30,7 +30,7 @@
       "cs": "CZ"
     },
     "faq": {
-      "h2": "ČASTO\nKLÁDANÉ"
+      "h2": "Časté\notázky"
     }
   },
   "meta": {
@@ -69,7 +69,7 @@
     "hero": {
       "kicker": "BLOC | LAB",
       "h1": "STRUKTURA\nJE DESIGN.",
-      "subheadline": "Minimalistické weby a webové aplikace. Praha. Globální delivery. Vlastní CMS v ceně."
+      "subheadline": "Minimalistické weby a webové aplikace. Globální delivery. Vlastní CMS v ceně."
     },
     "blocks": {
       "architecture": {
@@ -131,6 +131,17 @@
     "caseStudies": [
       {
         "number": "01",
+        "title": "MP DETAILING",
+        "category": "Auto detailing — web služeb",
+        "year": "2025",
+        "description": "Prezentace prémiového detailingu: korekce laku, keramická ochrana a interiér, přehledné programy s cenami, galerie práce a jasný kontakt včetně rezervace.",
+        "result": "Služby · Ceník · Galerie",
+        "href": "https://mpdetailing.cz/",
+        "previewSrc": "/portfolio/previews/mp-detailing.png",
+        "previewGhostLayout": "cover"
+      },
+      {
+        "number": "02",
         "title": "BRUT FORM",
         "category": "Web pro architekty",
         "year": "2026",
@@ -139,7 +150,7 @@
         "href": "#"
       },
       {
-        "number": "02",
+        "number": "03",
         "title": "NORTHWIND SaaS",
         "category": "Marketing + dokumentace",
         "year": "2026",
@@ -148,7 +159,7 @@
         "href": "#"
       },
       {
-        "number": "03",
+        "number": "04",
         "title": "MONO MARKET",
         "category": "E-commerce koncept",
         "year": "2025",
@@ -157,21 +168,12 @@
         "href": "#"
       },
       {
-        "number": "04",
+        "number": "05",
         "title": "BLOC CMS DEMO",
         "category": "Systém šablon",
         "year": "2026",
         "description": "Tři šablony, opakovatelné sekce, editorská kontrola a bezpečná typografická škála.",
         "result": "Onyx / Monolith / Aether",
-        "href": "#"
-      },
-      {
-        "number": "05",
-        "title": "MONOLITH SITE",
-        "category": "Enterprise web systém",
-        "year": "2026",
-        "description": "Silná hierarchie, strukturované stránky a škálovatelné komponenty pro větší weby.",
-        "result": "Škálovatelné sekce",
         "href": "#"
       }
     ],
@@ -226,29 +228,28 @@
     },
     "subscription": {
       "kicker": "Měsíčně",
-      "intro": "Web jako služba. V ceně máte vytvoření webu na naší šabloně, provoz, hosting i doménu. Závazek 12 měsíců (aby se zaplatila práce na setupu).",
+      "intro": "Web jako služba. V ceně vytvoření na šabloně, provoz, hosting i doména. Minimální závazek 12 měsíců.",
       "tiers": {
         "foundation": {
           "name": "Start",
-          "price": "od 490 Kč / měs",
-          "blurb": "Jednoduchý web ze šablony. Vy to pošlete, my to nasadíme. Bez vlastního editoru.",
+          "price": "490 Kč / měs",
+          "blurb": "Jednoduchý prezentační web ze šablony. Obsah na vyžádání upravujeme my.",
           "features": [
-            "Web ze šablony + základní nastavení",
+            "Výběr ze 3 šablon (one-page / vícestránková / designová)",
             "Hosting + doména v ceně",
-            "Základní stránky (home / služby / kontakt)",
-            "Obsah upravujeme my (na požádání)",
+            "Základní stránky (home, služby, kontakt)",
+            "Obsah upravujeme my na požádání",
             "Min. závazek 12 měsíců"
           ],
           "cta": "Chci Start"
         },
         "build": {
           "name": "Start CMS",
-          "price": "od 790 Kč / měs",
-          "blurb": "Stejný základ, ale s vlastním editorem obsahu. Upravujete texty a sekce bez rozbití designu.",
+          "price": "790 Kč / měs",
+          "blurb": "Vše z tarifu Start a navíc vlastní editor — texty, bloky a obrázky si můžete upravit sami.",
           "features": [
-            "Web ze šablony + vlastní CMS/editor",
-            "Hosting + doména v ceně",
-            "Upravitelný obsah (texty, bloky, obrázky)",
+            "Vše z tarifu Start",
+            "Vlastní CMS editor — texty, bloky, obrázky si můžete upravit sami",
             "Základní SEO nastavení",
             "Min. závazek 12 měsíců"
           ],
@@ -256,13 +257,12 @@
         },
         "scale": {
           "name": "Business CMS",
-          "price": "od 1 090 Kč / měs",
-          "blurb": "Větší web pro firmy: více sekcí/modulů a lepší prostor pro růst obsahu (blog, reference, galerie…).",
+          "price": "1 090 Kč / měs",
+          "blurb": "Vše z tarifu Start CMS, prioritní podpora a možnost rozšíření o další moduly dle potřeby.",
           "features": [
-            "Větší web ze šablony + CMS",
-            "Více sekcí/modulů (dle domluvy)",
-            "Blog / reference / galerie (dle potřeby)",
-            "Hosting + doména v ceně",
+            "Vše z tarifu Start CMS",
+            "Prioritní podpora",
+            "Možnost rozšíření o další moduly dle potřeby",
             "Min. závazek 12 měsíců"
           ],
           "cta": "Chci Business"
@@ -275,37 +275,40 @@
       "items": [
         {
           "title": "Web ze šablony",
-          "price": "od 6 000 Kč",
+          "pricePrefix": "od",
+          "price": "6 000 Kč",
           "blurb": "Rychlá varianta pro živnostníky a malé podnikání. Vybereme šablonu, doplníme obsah, doladíme základní styl a jde se ven.",
           "features": [
             "Web na naší šabloně + základní úpravy (barvy/logo)",
             "Doplnění obsahu + úprava klíčových údajů",
-            "Bez povinného měsíčního poplatku",
+            "Jednorázová platba",
             "Volitelně doména + hosting od 990 Kč/rok"
           ],
           "cta": "Chci web ze šablony"
         },
         {
-          "title": "Prémiový custom web",
-          "price": "od 30 000 Kč",
-          "blurb": "Individuální struktura, vlastní design a více práce s obsahem, UX a prezentací značky. Pro klienty, kteří nechtějí „jen šablonu“.",
+          "title": "Custom web",
+          "pricePrefix": "od",
+          "price": "25 000 Kč",
+          "blurb": "Individuální struktura, vlastní design a víc práce s obsahem, UX a značkou než u šablony. Next.js/React, volitelné napojení na naše CMS a přímá komunikace se seniory — bez WordPressu a bez outsourcování.",
           "features": [
             "Custom design + jasná struktura stránky",
-            "Silnější práce s obsahem a typografií",
-            "UX a konverzní flow dle cíle",
-            "Možnost napojení na naše CMS"
+            "Next.js/React build + možnost napojení na naše CMS",
+            "Silnější obsah, typografie a konverzní flow dle cíle",
+            "Přímá práce se seniory"
           ],
           "cta": "Chci custom web"
         },
         {
           "title": "Webová aplikace / interní systém",
-          "price": "od 50 000 Kč",
-          "blurb": "Rezervace, klientské zóny, dashboardy, evidence, kalkulačky, API integrace nebo jednoduché CRM. Cena vždy podle rozsahu po konzultaci.",
+          "pricePrefix": "od",
+          "price": "50 000 Kč",
+          "blurb": "Když nestačí web. Rezervace, portály, dashboardy, interní nástroje, API integrace. Scope a cena vždy po konzultaci.",
           "features": [
             "Návrh scope + technická architektura",
             "UI systém + core flow",
             "Integrace (API, DB) dle potřeby",
-            "Férové etapování, když to dává smysl"
+            "Etapování podle rozsahu"
           ],
           "cta": "Probrat aplikaci"
         }
@@ -404,11 +407,10 @@
   },
   "faq": {
     "home": [
-      { "q": "Doporučíte Next.js agenturu v Praze?", "a": "BLOC | LAB je pražské webové studio zaměřené na Next.js a React. Jsme dva seniorní FE vývojáři (oba Tomáš) a komunikujete přímo s těmi, kdo web navrhují a staví. Dodáváme weby pro CZ trh i v angličtině pro zahraničí." },
-      { "q": "Je BLOC | LAB agentura nebo freelanceři?", "a": "Jsme malé studio dvou seniorních vývojářů. Nemáme account manažery ani outsourcing. Máte přímý kontakt na lidi, co projekt dělají." },
-      { "q": "Dělá BLOC | LAB weby pro živnostníky v ČR?", "a": "Ano. Děláme rychlé, minimalistické weby pro živnostníky a malé firmy — typicky služby, o vás, reference a kontakt. Umíme přidat CMS, abyste si obsah upravovali sami." },
+      { "q": "Je BLOC | LAB agentura nebo freelanceři?", "a": "Jsme menší studio. Nemáme account manažery ani outsourcing — máte přímý kontakt na lidi, co projekt dělají." },
+      { "q": "I pro živnostníky?", "a": "Ano. Děláme rychlé, minimalistické weby pro živnostníky a malé firmy — typicky služby, o vás, reference a kontakt. Umíme přidat CMS, abyste si obsah upravovali sami." },
       { "q": "V jakém stacku stavíte weby?", "a": "Primárně Next.js a React. Často dodáváme i vlastní CMS se šablonami, aby šel obsah bezpečně editovat. Cílem je čistý systém, který se dobře udržuje." },
-      { "q": "Kde sídlíte a děláte i zahraniční projekty?", "a": "Jsme z Prahy (Česká republika). Děláme projekty pro CZ/SK, západní Evropu i USA. Web může být primárně v angličtině, s češtinou jako variantou." }
+      { "q": "Kde sídlíte a děláte i zahraniční projekty?", "a": "Působíme v rámci celé ČR, pracovní schůzky jsou možné v Praze i v Brně, případně online.\n\nDěláme i zahraniční projekty" }
     ],
     "portfolio": [
       { "q": "Jaké projekty najdu v portfoliu BLOC | LAB?", "a": "Primárně weby a systémy v Next.js/React: portfolia, firemní weby, SaaS marketing a CMS šablony. Některé položky jsou koncepty, které ukazují layout a komponentový systém." },
@@ -426,14 +428,13 @@
     ],
     "pricing": [
       { "q": "Jste nejlevnější varianta v Praze?", "a": "Ne. Jsme uprostřed trhu: férová cena za seniorní práci, bez velkého agenturního týmu. Platíte za přímou realizaci a udržitelný kód." },
-      { "q": "Jak naceňujete projekty?", "a": "Máme dva modely: subscription kapacitu (měsíční bandwidth) a jednorázové dodávky s fixed scope. Subscription je nejlepší, když chcete průběžně iterovat; one-off je nejlepší pro jasný launch. Vždy si dopředu sladíme rozsah." },
-      { "q": "Co je obvykle součástí ceny?", "a": "U jednorázových dodávek: design + vývoj v Next.js/React, systém stránek a launch-ready základ. U subscription: průběžná dodávka v rámci domluvené kapacity. Často je součástí i vlastní CMS se šablonami pro editaci." },
-      { "q": "Jak dlouho trvá běžný web?", "a": "Menší weby umíme dodat v řádu týdnů, pokud je obsah a rozsah jasný. Komplexnější systémy trvají déle a často se dělají po etapách. Timing potvrdíme po krátkém briefu." },
-      { "q": "Děláte i CMS-only integraci do existujícího webu?", "a": "Někdy ano. Pokud současný web sedí na šablonový systém, umíme přidat CMS a migrovat obsah. Nejprve ale potřebujeme zhodnotit aktuální kód." }
+      { "q": "Jak naceňujete projekty?", "a": "Máme dva modely: měsíční předplatné a jednorázový projekt. Předplatné sedí těm, kdo chtějí web průběžně rozvíjet. Jednorázový projekt je pro jasně ohraničený scope. Rozsah vždy probereme dopředu." },
+      { "q": "Co je obvykle součástí ceny?", "a": "Jednorázový projekt: design a vývoj v Next.js/React, systém stránek a vše potřebné ke spuštění. Měsíční spolupráce: průběžná práce v rámci domluvené kapacity. Často je součástí i vlastní CMS se šablonami pro editaci." },
+      { "q": "Jak dlouho trvá běžný web?", "a": "Menší weby umíme dodat v řádu týdnů, pokud je obsah a rozsah jasný. Komplexnější systémy trvají déle a často se dělají po etapách. Časový odhad upřesníme po krátkém zadání." }
     ],
     "contact": [
       { "q": "Jak kontaktovat BLOC | LAB?", "a": "Napište na hello@bloclab.dev. Stačí krátký brief: co potřebujete, termín, odkazy a reference. Ozveme se s dalším postupem a realistickým odhadem." },
-      { "q": "Děláte projekty pro CZ i EN klienty?", "a": "Ano. Jsme z Prahy a běžně pracujeme v angličtině se zahraničními týmy. Umíme dodat EN-first web a přidat CZ jako druhý jazyk." },
+      { "q": "Děláte projekty pro CZ i EN klienty?", "a": "Ano. Působíme v Praze i v Brně a běžně pracujeme v angličtině se zahraničními týmy. Umíme dodat EN-first web a přidat CZ jako druhý jazyk." },
       { "q": "Co mám poslat do první zprávy?", "a": "Cíl webu, jaké stránky/funkce potřebujete, příklady co se vám líbí a termín. Pokud už máte brand nebo texty, pošlete odkazy. To stačí na první odhad." },
       { "q": "Postavíte web pro živnostníka v ČR?", "a": "Ano. Často děláme rychlé, minimalistické weby pro živnostníky a malé firmy. Doporučíme nejjednodušší scope, který pořád působí prémiově." },
       { "q": "Děláte support po spuštění?", "a": "Ano, podle potřeby. Mnoho klientů řeší běžné změny přes CMS a my pomáháme s většími úpravami nebo novými sekcemi. Support model si domluvíme dopředu." }

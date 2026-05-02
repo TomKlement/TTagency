@@ -140,6 +140,7 @@ export function PricingPage() {
 
   const oneOffItems = t('pricing.oneOff.items', { returnObjects: true }) as Array<{
     title: string
+    pricePrefix?: string
     price: string
     blurb: string
     features: string[]
@@ -181,7 +182,7 @@ export function PricingPage() {
               className={[
                 'relative z-10 flex-1 px-4 py-3 uppercase tracking-[0.2em] text-[10px] font-semibold',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)]/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]',
-                'disabled:opacity-70 disabled:cursor-not-allowed',
+                'disabled:opacity-70 disabled:cursor-pointer',
                 mode === 'monthly'
                   ? 'text-[var(--color-bg)]'
                   : 'text-[var(--color-text)] hover:bg-[var(--color-soft)]',
@@ -197,7 +198,7 @@ export function PricingPage() {
               className={[
                 'relative z-10 flex-1 px-4 py-3 uppercase tracking-[0.2em] text-[10px] font-semibold border-l border-[var(--color-border)]',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text)]/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]',
-                'disabled:opacity-70 disabled:cursor-not-allowed',
+                'disabled:opacity-70 disabled:cursor-pointer',
                 mode === 'oneOff'
                   ? 'text-[var(--color-bg)]'
                   : 'text-[var(--color-text)] hover:bg-[var(--color-soft)]',
@@ -217,7 +218,7 @@ export function PricingPage() {
         {mode === 'monthly' ? (
           <section
             ref={cardsRef}
-            className="grid grid-cols-1 lg:grid-cols-3 border-b border-[var(--color-border)]"
+            className="grid grid-cols-1 items-stretch border-b border-[var(--color-border)] lg:grid-cols-3"
           >
             {subscriptionTierKeys.map((key, idx) => {
               const featured = key === 'build'
@@ -232,7 +233,7 @@ export function PricingPage() {
                   key={key}
                   data-pricing-card
                   className={[
-                    'relative p-12 md:p-16 min-h-[620px] flex flex-col border-b lg:border-b-0',
+                    'relative flex h-full min-h-[620px] min-w-0 flex-col border-b p-12 md:p-16 lg:border-b-0',
                     idx < 2 ? 'lg:border-r border-[var(--color-border)]' : '',
                     featured
                       ? 'bg-[var(--color-text)] text-[var(--color-bg)]'
@@ -246,7 +247,7 @@ export function PricingPage() {
                   ) : null}
                   <div
                     className={[
-                      'uppercase tracking-[0.2em] text-[10px] font-semibold',
+                      'min-h-[3rem] uppercase tracking-[0.2em] text-[10px] font-semibold leading-snug',
                       featured ? 'opacity-70' : 'text-[var(--color-muted)]',
                     ].join(' ')}
                   >
@@ -255,40 +256,40 @@ export function PricingPage() {
                   <div
                     data-price
                     className={[
-                      'mt-8 font-serif font-black leading-[0.95] tracking-tight',
-                      'text-[clamp(40px,4.8vw,58px)]',
+                      'mt-6 min-w-0 break-words font-serif font-black leading-[1.05] tracking-tight',
+                      'text-[clamp(28px,3.2vw,44px)]',
                     ].join(' ')}
                   >
                     {price}
                   </div>
                   <p
                     className={[
-                      'mt-6 text-[14px] md:text-[15px] leading-relaxed max-w-[42ch]',
+                      'mt-5 min-h-[6.25rem] min-w-0 max-w-[42ch] text-[13px] leading-relaxed md:mt-6 md:min-h-[6.75rem] md:text-[14px]',
                       featured ? 'opacity-85' : 'text-[var(--color-muted)]',
                     ].join(' ')}
                   >
                     {blurb}
                   </p>
-                  <div className="mt-10 flex-1 space-y-0 text-[14px] md:text-[15px]">
+                  <div className="mt-8 flex min-w-0 flex-1 flex-col space-y-0 pb-10 text-[13px] md:mt-10 md:text-[14px]">
                     {features.map((f) => (
                       <div
                         key={f}
                         className={[
-                          'flex gap-3 border-t py-4',
+                          'flex min-w-0 gap-3 border-t py-4',
                           featured ? 'border-current/20' : 'border-[var(--color-soft)]',
                         ].join(' ')}
                       >
                         <span className="shrink-0 font-medium" aria-hidden>
                           ✓
                         </span>
-                        <span>{f}</span>
+                        <span className="min-w-0 break-words">{f}</span>
                       </div>
                     ))}
                   </div>
                   <Link
                     to="/contact"
                     className={[
-                      'mt-12 flex h-14 w-full items-center justify-center uppercase tracking-[0.18em] text-[10px] font-semibold',
+                      'mt-auto flex h-14 w-full shrink-0 items-center justify-center uppercase tracking-[0.18em] text-[10px] font-semibold leading-none',
                       featured
                         ? 'border border-[var(--color-bg)] bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-transparent hover:text-[var(--color-bg)]'
                         : 'border border-[var(--color-border)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]',
@@ -303,7 +304,7 @@ export function PricingPage() {
         ) : (
           <section
             ref={cardsRef}
-            className="grid grid-cols-1 lg:grid-cols-3 border-b border-[var(--color-border)]"
+            className="grid grid-cols-1 items-stretch border-b border-[var(--color-border)] lg:grid-cols-3"
           >
             {oneOffItems.map((it, idx) => {
               const featured = idx === 1
@@ -312,66 +313,83 @@ export function PricingPage() {
                   key={it.title}
                   data-pricing-card
                   className={[
-                    'relative p-12 md:p-16 min-h-[620px] flex flex-col border-b lg:border-b-0',
+                    'relative flex h-full min-h-[620px] min-w-0 flex-col border-b p-12 md:p-16 lg:border-b-0',
                     idx < 2 ? 'lg:border-r border-[var(--color-border)]' : '',
                     featured
                       ? 'bg-[var(--color-text)] text-[var(--color-bg)]'
                       : 'bg-[var(--color-bg)] text-[var(--color-text)]',
                   ].join(' ')}
                 >
-                  {featured ? (
-                    <div className="absolute top-8 right-8 md:top-10 md:right-10 border border-current/35 px-2 py-1 uppercase tracking-[0.2em] text-[9px] opacity-90">
-                      {t('pricing.badgePopular')}
-                    </div>
-                  ) : null}
                   <div
                     className={[
-                      'font-serif font-black uppercase leading-[1.05] tracking-tight',
-                      'text-[clamp(22px,2.4vw,30px)]',
-                      featured ? '' : 'text-[var(--color-text)]',
+                      'min-h-[4.5rem] uppercase leading-[1.08] tracking-tight md:min-h-[4.25rem]',
+                      'text-[clamp(17px,1.85vw,26px)]',
+                      featured
+                        ? 'font-sans font-bold uppercase tracking-[0.12em] text-[clamp(13px,1.35vw,17px)]'
+                        : 'font-serif font-black uppercase text-[var(--color-text)]',
                     ].join(' ')}
                   >
                     {it.title}
                   </div>
-                  <div
-                    data-price
-                    className={[
-                      'mt-8 font-serif font-black leading-[0.95] tracking-tight',
-                      'text-[clamp(40px,4.8vw,58px)]',
-                    ].join(' ')}
-                  >
-                    {it.price}
+                  <div className="mt-6 min-w-0">
+                    {it.pricePrefix ? (
+                      <span
+                        className={[
+                          'mb-1 block text-[10px] font-semibold uppercase leading-none tracking-[0.22em]',
+                          featured ? 'font-mono opacity-80' : 'text-[var(--color-muted)]',
+                        ].join(' ')}
+                      >
+                        {it.pricePrefix}
+                      </span>
+                    ) : null}
+                    <div
+                      data-price
+                      className={[
+                        'min-w-0 break-words font-black leading-[1.05] tracking-tight',
+                        'text-[clamp(28px,3.2vw,44px)]',
+                        featured ? 'font-sans' : 'font-serif',
+                      ].join(' ')}
+                    >
+                      {it.price}
+                    </div>
                   </div>
                   <p
                     className={[
-                      'mt-6 text-[14px] md:text-[15px] leading-relaxed max-w-[42ch]',
-                      featured ? 'opacity-85' : 'text-[var(--color-muted)]',
+                      'mt-5 min-h-[6.25rem] min-w-0 max-w-[42ch] leading-relaxed md:mt-6 md:min-h-[6.75rem]',
+                      featured
+                        ? 'font-mono text-[12px] opacity-90 md:text-[13px]'
+                        : 'text-[13px] text-[var(--color-muted)] md:text-[14px]',
                     ].join(' ')}
                   >
                     {it.blurb}
                   </p>
-                  <div className="mt-10 flex-1 space-y-0 text-[14px] md:text-[15px]">
+                  <div
+                    className={[
+                      'mt-8 flex min-w-0 flex-1 flex-col space-y-0 pb-10 md:mt-10',
+                      featured ? 'font-mono text-[12px] md:text-[13px]' : 'text-[13px] md:text-[14px]',
+                    ].join(' ')}
+                  >
                     {it.features.map((f) => (
                       <div
                         key={f}
                         className={[
-                          'flex gap-3 border-t py-4',
+                          'flex min-w-0 gap-3 border-t py-4',
                           featured ? 'border-current/20' : 'border-[var(--color-soft)]',
                         ].join(' ')}
                       >
                         <span className="shrink-0 font-medium" aria-hidden>
                           ✓
                         </span>
-                        <span>{f}</span>
+                        <span className="min-w-0 break-words">{f}</span>
                       </div>
                     ))}
                   </div>
                   <Link
                     to="/contact"
                     className={[
-                      'mt-12 flex h-14 w-full items-center justify-center uppercase tracking-[0.18em] text-[10px] font-semibold',
+                      'mt-auto flex h-14 w-full shrink-0 items-center justify-center uppercase tracking-[0.18em] text-[10px] font-semibold leading-none',
                       featured
-                        ? 'border border-[var(--color-bg)] bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-transparent hover:text-[var(--color-bg)]'
+                        ? 'border border-[var(--color-bg)] bg-transparent text-[var(--color-bg)] hover:bg-[var(--color-bg)] hover:text-[var(--color-text)]'
                         : 'border border-[var(--color-border)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]',
                     ].join(' ')}
                   >
