@@ -224,7 +224,7 @@
     },
     "subscription": {
       "kicker": "Monthly",
-      "intro": "A website without a large upfront investment. We build it on a template, handle operations, hosting, and the domain. You pay monthly.",
+      "intro": "A website without a large upfront investment. We build it on a template, handle operations, hosting, and the domain. You pay monthly. 12-month minimum commitment.",
       "tiers": {
         "foundation": {
           "name": "Start",
@@ -233,9 +233,8 @@
           "features": [
             "Pick from 3 templates (one-page / multi-page / design-led)",
             "Hosting + domain included",
-            "Core pages (home, services, contact)",
-            "Content updates by us on request",
-            "12-month minimum commitment"
+            "Content updates by us within your monthly support",
+            "1 hour of support per month"
           ],
           "cta": "Get Start"
         },
@@ -246,8 +245,7 @@
           "features": [
             "Everything in Start",
             "CMS editor — you can edit text, blocks, and images yourself",
-            "Basic SEO setup",
-            "12-month minimum commitment"
+            "Basic SEO setup"
           ],
           "cta": "Get Start CMS"
         },
@@ -258,8 +256,7 @@
           "features": [
             "Everything in Start CMS",
             "Priority support",
-            "Option to extend with additional modules as needed",
-            "12-month minimum commitment"
+            "Option to extend with additional modules as needed"
           ],
           "cta": "Get Business"
         }
@@ -420,10 +417,10 @@
       { "q": "Is the CMS headless?", "a": "It’s designed as a content layer that can drive templates and reusable sections. We keep the build clean and performance-first, and the content structure is portable." }
     ],
     "pricing": [
-      { "q": "Are you the cheapest option in Prague?", "a": "No. We’re positioned in the middle of the market: fair pricing for senior work, without a large agency team. You pay for direct delivery and maintainable code." },
+      { "q": "Are you the cheapest option?", "a": "No. We’re positioned in the middle of the market: fair pricing for senior work, without a large agency team. You pay for direct delivery and maintainable code." },
       { "q": "How do you price projects?", "a": "We have two models: a monthly subscription and a one-off project. Subscription fits you if you want to keep evolving the site. A one-off project fits a clearly bounded scope. We always discuss scope upfront." },
       { "q": "What is usually included in the price?", "a": "One-off project: design and development in Next.js/React, a structured page system, and everything needed for go-live. Monthly collaboration: ongoing work within the agreed capacity. Many projects also include our CMS with templates for editing." },
-      { "q": "How long does a typical website take?", "a": "Small websites can be shipped in weeks, not months, if content and scope are clear. More complex systems take longer and are usually phased. We’ll confirm timing after a short brief." }
+      { "q": "How long does a typical website take?", "a": "Smaller websites can often be delivered within two weeks if content and scope are clear. More complex systems take longer and are usually phased. We’ll confirm timing after a short brief." }
     ],
     "contact": [
       { "q": "How do I contact BLOC | LAB?", "a": "Email us at hello@bloclab.dev. Send a short brief: what you need, timeline, links, and any references. We’ll reply with next steps and a realistic estimate." },

@@ -224,7 +224,7 @@
     },
     "subscription": {
       "kicker": "Měsíčně",
-      "intro": "Web bez velké počáteční investice. Postavíme ho na šabloně, zařídíme provoz, hosting i doménu. Vy platíte měsíčně.",
+      "intro": "Web bez velké počáteční investice. Postavíme ho na šabloně, zařídíme provoz, hosting i doménu. Vy platíte měsíčně. Min. závazek 12 měsíců.",
       "tiers": {
         "foundation": {
           "name": "Start",
@@ -233,9 +233,8 @@
           "features": [
             "Výběr ze 3 šablon (one-page / vícestránková / designová)",
             "Hosting + doména v ceně",
-            "Základní stránky (home, služby, kontakt)",
-            "Obsah upravujeme my na požádání",
-            "Min. závazek 12 měsíců"
+            "Obsah upravujeme my v rámci supportu",
+            "1 hod. podpory měsíčně"
           ],
           "cta": "Chci Start"
         },
@@ -246,8 +245,7 @@
           "features": [
             "Vše z tarifu Start",
             "Vlastní CMS editor — texty, bloky, obrázky si můžete upravit sami",
-            "Základní SEO nastavení",
-            "Min. závazek 12 měsíců"
+            "Základní SEO nastavení"
           ],
           "cta": "Chci Start CMS"
         },
@@ -258,8 +256,7 @@
           "features": [
             "Vše z tarifu Start CMS",
             "Prioritní podpora",
-            "Možnost rozšíření o další moduly dle potřeby",
-            "Min. závazek 12 měsíců"
+            "Možnost rozšíření o další moduly dle potřeby"
           ],
           "cta": "Chci Business"
         }
@@ -420,10 +417,10 @@
       { "q": "Je to headless CMS?", "a": "Je to content vrstva, která řídí šablony a opakovatelné sekce. Držíme build performance-first a struktura obsahu je přenositelná. Detaily vždy nastavíme podle projektu." }
     ],
     "pricing": [
-      { "q": "Jste nejlevnější varianta v Praze?", "a": "Ne. Jsme uprostřed trhu: férová cena za seniorní práci, bez velkého agenturního týmu. Platíte za přímou realizaci a udržitelný kód." },
+      { "q": "Jste nejlevnější varianta?", "a": "Ne. Jsme uprostřed trhu: férová cena za seniorní práci, bez velkého agenturního týmu. Platíte za přímou realizaci a udržitelný kód." },
       { "q": "Jak naceňujete projekty?", "a": "Máme dva modely: měsíční předplatné a jednorázový projekt. Předplatné sedí těm, kdo chtějí web průběžně rozvíjet. Jednorázový projekt je pro jasně ohraničený scope. Rozsah vždy probereme dopředu." },
       { "q": "Co je obvykle součástí ceny?", "a": "Jednorázový projekt: design a vývoj v Next.js/React, systém stránek a vše potřebné ke spuštění. Měsíční spolupráce: průběžná práce v rámci domluvené kapacity. Často je součástí i vlastní CMS se šablonami pro editaci." },
-      { "q": "Jak dlouho trvá běžný web?", "a": "Menší weby umíme dodat v řádu týdnů, pokud je obsah a rozsah jasný. Komplexnější systémy trvají déle a často se dělají po etapách. Časový odhad upřesníme po krátkém zadání." }
+      { "q": "Jak dlouho trvá běžný web?", "a": "Menší weby umíme dodat do 2 týdnů, pokud je obsah a rozsah jasný. Komplexnější systémy trvají déle a často se dělají po etapách. Časový odhad upřesníme po krátkém zadání." }
     ],
     "contact": [
       { "q": "Jak kontaktovat BLOC | LAB?", "a": "Napište na hello@bloclab.dev. Stačí krátký brief: co potřebujete, termín, odkazy a reference. Ozveme se s dalším postupem a realistickým odhadem." },
