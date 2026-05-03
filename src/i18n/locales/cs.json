@@ -48,8 +48,8 @@
     },
     "cmsDemo": {
       "title": "CMS Demo — BLOC | LAB",
-      "description": "Vlastní CMS weby v Next.js/React. Prohlédněte Onyx, Monolith a Aether šablony. Praha, Česká republika — i pro EN trh.",
-      "ogTitle": "CMS Demo — Onyx / Monolith / Aether",
+      "description": "Vlastní CMS weby v Next.js/React. Šablony MONO, NODE a BLOCK — jedna stránka, více stránek nebo prezentace s galeriemi. Praha, Česká republika — i pro EN trh.",
+      "ogTitle": "CMS Demo — MONO / NODE / BLOCK",
       "ogDescription": "Vlastní CMS + šablony v ceně. Úpravy obsahu bez rozbití typografie a layoutu."
     },
     "pricing": {
@@ -168,8 +168,8 @@
         "title": "BLOC CMS DEMO",
         "category": "Systém šablon",
         "year": "2026",
-        "description": "Tři šablony, opakovatelné sekce, editorská kontrola a bezpečná typografická škála.",
-        "result": "Onyx / Monolith / Aether",
+        "description": "Tři šablony ve CMS demu — MONO, NODE, BLOCK (jedna stránka, více stránek, prezentace). Opakovatelné sekce, editorská kontrola a bezpečná typografická škála.",
+        "result": "MONO / NODE / BLOCK",
         "href": "#"
       }
     ],
@@ -182,27 +182,27 @@
     "button": "Spustit náhled",
     "templates": [
       {
-        "title": "Onyx",
+        "title": "MONO",
         "items": [
-          "Čisté editorial rozvržení",
-          "Case studies + media grid",
-          "Jednoduchá navigace + silná typografie"
+          "Vše na jedné stránce — rychlé, přehledné, dobře čitelné na mobilu",
+          "Ideální pro živnostníky a jednoduché prezentace",
+          "Úvod, služby, o vás, kontakt — vše tam, kde to návštěvník čeká"
         ]
       },
       {
-        "title": "Monolith",
+        "title": "NODE",
         "items": [
-          "Silná hierarchie pro firmy",
-          "Service bloky + trust moduly",
-          "Strukturované stránky, SEO-ready sekce"
+          "Vlastní stránka pro každou důležitou část webu",
+          "Struktura napříč stránkami připravená pro SEO",
+          "Vhodné pro firmy s více službami nebo delšími texty"
         ]
       },
       {
-        "title": "Aether",
+        "title": "BLOCK",
         "items": [
-          "Produktový layout pro SaaS",
-          "Feature stránky + pricing bloky",
-          "Blog/changelog patterny"
+          "Práce mluví za vás — galerie, mřížka projektů, velké vizuály",
+          "Šablona pro kreativce, studia a architekty",
+          "Reference jako střed webu, ne jako příloha na konci"
         ]
       }
     ],
@@ -231,7 +231,7 @@
           "price": "490 Kč / měs",
           "blurb": "Jednoduchý web pro živnostníka nebo malou firmu. Vybereme šablonu, doplníme obsah a změny řešíme za Vás dle domluvy.",
           "features": [
-            "Výběr ze 3 šablon (one-page / vícestránková / designová)",
+            "Výběr ze 3 šablon — MONO, NODE, BLOCK (jedna stránka / více stránek / prezentace)",
             "Hosting + doména v ceně",
             "Obsah upravujeme my v rámci supportu",
             "1 hod. podpory měsíčně"
@@ -412,7 +412,7 @@
     "cmsDemo": [
       { "q": "Jaké CMS používá BLOC | LAB?", "a": "Používáme vlastní CMS postavené na strukturovaném obsahu a šablonách. Je navržené tak, aby drželo design konzistentní a editaci bezpečnou. Přístup si můžete prohlédnout na CMS Demo stránce." },
       { "q": "Je CMS v ceně projektu?", "a": "Často ano. U řady projektů je součástí vlastní CMS a set šablon, abyste si obsah upravovali bez vývojářů. Konkrétní rozsah závisí na typu webu a obsahu." },
-      { "q": "Co jsou Onyx, Monolith a Aether?", "a": "Jsou to směry šablon v našem CMS demu. Onyx je více editorial/portfolio, Monolith je pro strukturované firemní weby a Aether pro SaaS marketing systémy." },
+      { "q": "Jaké typy šablon v CMS demu ukazujete?", "a": "Tři pojmenované šablony: MONO (jedna dlouhá stránka), NODE (vícero stránek) a BLOCK (prezentace a galerie). Na CMS Demo je u každé vysvětleno, pro jaký typ webu se hodí." },
       { "q": "Umí CMS case studies, blog nebo changelog?", "a": "Ano. Umíme namodelovat typy obsahu (case studies, blog, changelog) a renderovat je konzistentními šablonami. Cíl je opakovatelná struktura s čistou typografií." },
       { "q": "Je to headless CMS?", "a": "Je to content vrstva, která řídí šablony a opakovatelné sekce. Držíme build performance-first a struktura obsahu je přenositelná. Detaily vždy nastavíme podle projektu." }
     ],

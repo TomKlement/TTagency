@@ -48,8 +48,8 @@
     },
     "cmsDemo": {
       "title": "CMS Demo — BLOC | LAB",
-      "description": "Custom CMS websites built with Next.js/React. Explore Onyx, Monolith, and Aether templates—Prague-based agency, global delivery.",
-      "ogTitle": "CMS Demo — Onyx / Monolith / Aether",
+      "description": "Custom CMS websites in Next.js/React. MONO, NODE, and BLOCK templates — one page, multi-page, and showcase layouts. Prague-based, global delivery.",
+      "ogTitle": "CMS Demo — MONO / NODE / BLOCK",
       "ogDescription": "A custom CMS + templates included. Edit content safely while keeping a brutal-minimal design system."
     },
     "pricing": {
@@ -168,8 +168,8 @@
         "title": "BLOC CMS DEMO",
         "category": "Template system",
         "year": "2026",
-        "description": "Three templates, reusable sections, editorial controls, and safe typography scale.",
-        "result": "Onyx / Monolith / Aether",
+        "description": "Three CMS demo templates—MONO, NODE, and BLOCK. Reusable sections, editorial controls, and a safe typography scale.",
+        "result": "MONO / NODE / BLOCK",
         "href": "#"
       }
     ],
@@ -182,27 +182,27 @@
     "button": "Launch preview",
     "templates": [
       {
-        "title": "Onyx",
+        "title": "MONO",
         "items": [
-          "Clean editorial layout",
-          "Case studies + media grid",
-          "Simple navigation + strong typography"
+          "Everything on one page — fast, clear, mobile-friendly",
+          "Ideal for freelancers and straightforward presentations",
+          "Intro, services, about, contact — right where visitors expect them"
         ]
       },
       {
-        "title": "Monolith",
+        "title": "NODE",
         "items": [
-          "Bold hierarchy for companies",
-          "Service blocks + trust modules",
-          "Structured pages, SEO-ready sections"
+          "A dedicated page for each important part of the site",
+          "Structure across pages that’s built with SEO in mind",
+          "Suited to companies with more services or longer-form content"
         ]
       },
       {
-        "title": "Aether",
+        "title": "BLOCK",
         "items": [
-          "Product-led layout for SaaS",
-          "Feature pages + pricing blocks",
-          "Blog/changelog patterns"
+          "Let the work speak — galleries, grids, large visuals",
+          "Tailored for creatives, studios, and architects",
+          "Reference projects as the center of the site, not an afterthought"
         ]
       }
     ],
@@ -231,7 +231,7 @@
           "price": "490 CZK / mo",
           "blurb": "A simple site for freelancers or small businesses. We pick a template, fill in the content, and handle changes for you by agreement.",
           "features": [
-            "Pick from 3 templates (one-page / multi-page / design-led)",
+            "Pick from 3 templates — MONO, NODE, BLOCK (one page / multi-page / showcase)",
             "Hosting + domain included",
             "Content updates by us within your monthly support",
             "1 hour of support per month"
@@ -412,7 +412,7 @@
     "cmsDemo": [
       { "q": "What CMS does BLOC | LAB use?", "a": "We use our own CMS designed around structured content and reusable templates. It’s built to keep design consistent and editing safe. You can preview the approach on the CMS Demo page." },
       { "q": "Do you include a CMS in the project price?", "a": "Often yes. Many projects include our CMS and a template set so you can edit pages without developers. The exact setup depends on scope and content types." },
-      { "q": "What are Onyx, Monolith, and Aether?", "a": "They’re template directions inside our CMS demo. Onyx fits editorial/portfolio layouts, Monolith fits structured business sites, and Aether fits SaaS marketing systems." },
+      { "q": "What template types does the CMS demo show?", "a": "Three named templates: MONO (one page), NODE (multi-page), and BLOCK (showcase & galleries). The CMS Demo page explains what each is for." },
       { "q": "Can the CMS handle case studies, blog posts, or changelogs?", "a": "Yes. We can model content types like case studies, blog, and changelog, and render them as consistent templates. The point is repeatable structure with clean typography." },
       { "q": "Is the CMS headless?", "a": "It’s designed as a content layer that can drive templates and reusable sections. We keep the build clean and performance-first, and the content structure is portable." }
     ],
