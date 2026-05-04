@@ -104,17 +104,17 @@
       "steps": [
         {
           "number": "01",
-          "title": "Discovery",
+          "title": "Zmapování",
           "body": "Nejdřív si ujasníme, co má web prodávat, komu je určený a co na něm opravdu musí být."
         },
         {
           "number": "02",
-          "title": "Design & build",
+          "title": "Návrh a realizace",
           "body": "Navrhneme strukturu, vzhled a postavíme web tak, aby dobře vypadal na mobilu, rychle se načítal a vedl lidi ke kontaktu."
         },
         {
           "number": "03",
-          "title": "Launch & care",
+          "title": "Spuštění a péče",
           "body": "Vyřešíme spuštění, hosting, doménu i další úpravy. Můžete to nechat celé na nás, nebo si web spravovat sami."
         }
       ]
