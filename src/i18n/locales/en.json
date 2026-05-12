@@ -325,13 +325,11 @@
     "h1": "Send us a brief. We’ll tell you what makes sense.",
     "body": "Just tell us what you need, when you want to launch, and share a few websites you like. We’ll reply with a proposed approach and a ballpark price.",
     "emailLabel": "Email",
+    "emailCopied": "Copied",
     "form": {
       "nameLabel": "Name",
       "emailLabel": "Email",
       "messageLabel": "Message",
-      "namePlaceholder": "YOUR NAME",
-      "emailPlaceholder": "EMAIL ADDRESS",
-      "messagePlaceholder": "ENTER MESSAGE",
       "submit": "Send"
     }
   }

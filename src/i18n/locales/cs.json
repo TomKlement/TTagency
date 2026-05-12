@@ -325,13 +325,11 @@
     "h1": "Pošlete nám zadání. Řekneme vám, co dává smysl.",
     "body": "Stačí napsat, co potřebujete, kdy to chcete spustit a poslat pár webů, které se vám líbí. Ozveme se s návrhem postupu a orientační cenou.",
     "emailLabel": "E-mail",
+    "emailCopied": "Zkopírováno",
     "form": {
       "nameLabel": "Jméno",
       "emailLabel": "E-mail",
       "messageLabel": "Zpráva",
-      "namePlaceholder": "VAŠE JMÉNO",
-      "emailPlaceholder": "E-MAIL",
-      "messagePlaceholder": "ZPRÁVA",
       "submit": "Odeslat"
     }
   }

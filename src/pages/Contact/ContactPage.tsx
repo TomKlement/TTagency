@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { FaqSection } from '../../shared/geo/FaqSection'
@@ -5,6 +6,34 @@ import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
 
 export function ContactPage() {
   const { t } = useTranslation()
+  const email = t('brand.email')
+  const [isEmailCopied, setIsEmailCopied] = useState(false)
+  const copyResetTimeoutRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (copyResetTimeoutRef.current !== null) {
+        window.clearTimeout(copyResetTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  async function handleCopyEmail() {
+    try {
+      await navigator.clipboard.writeText(email)
+      setIsEmailCopied(true)
+
+      if (copyResetTimeoutRef.current !== null) {
+        window.clearTimeout(copyResetTimeoutRef.current)
+      }
+
+      copyResetTimeoutRef.current = window.setTimeout(() => {
+        setIsEmailCopied(false)
+      }, 2000)
+    } catch {
+      setIsEmailCopied(false)
+    }
+  }
 
   return (
     <div className="bg-[var(--color-bg)] text-[var(--color-text)]">
@@ -20,9 +49,16 @@ export function ContactPage() {
           </p>
           <div className="mt-10 uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]">
             {t('contact.emailLabel')}:{' '}
-            <a className="text-[var(--color-text)] underline hover:opacity-70" href={`mailto:${t('brand.email')}`}>
-              {t('brand.email')}
-            </a>
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="text-[var(--color-text)] underline hover:opacity-70"
+            >
+              {email}
+            </button>
+            <span aria-live="polite" className="ml-3 text-[var(--color-muted)]">
+              {isEmailCopied ? t('contact.emailCopied') : ''}
+            </span>
           </div>
         </div>
 
@@ -30,31 +66,43 @@ export function ContactPage() {
           <form className="w-full max-w-[520px] ml-auto border border-[var(--color-border)] p-8 md:p-10">
             <div className="space-y-8">
               <div>
-                <label className="uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]">
+                <label
+                  htmlFor="contact-name"
+                  className="uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]"
+                >
                   {t('contact.form.nameLabel')}
                 </label>
                 <input
-                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] placeholder:text-[var(--color-muted)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
-                  placeholder={t('contact.form.namePlaceholder')}
+                  id="contact-name"
+                  autoComplete="name"
+                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
                 />
               </div>
               <div>
-                <label className="uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]">
+                <label
+                  htmlFor="contact-email"
+                  className="uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]"
+                >
                   {t('contact.form.emailLabel')}
                 </label>
                 <input
-                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] placeholder:text-[var(--color-muted)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
-                  placeholder={t('contact.form.emailPlaceholder')}
+                  id="contact-email"
+                  type="email"
+                  autoComplete="email"
+                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
                 />
               </div>
               <div>
-                <label className="uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]">
+                <label
+                  htmlFor="contact-message"
+                  className="uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]"
+                >
                   {t('contact.form.messageLabel')}
                 </label>
                 <textarea
+                  id="contact-message"
                   rows={4}
-                  className="mt-3 w-full resize-none bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] placeholder:text-[var(--color-muted)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
-                  placeholder={t('contact.form.messagePlaceholder')}
+                  className="mt-3 w-full resize-none bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
                 />
               </div>
             </div>
