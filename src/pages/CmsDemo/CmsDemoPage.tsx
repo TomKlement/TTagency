@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
+import { ContactUsLink } from '../../shared/ContactUsLink'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -194,7 +195,8 @@ export function CmsDemoPage() {
         </div>
 
         <div data-reveal className="mt-10 text-center text-[var(--color-muted)] text-[13px] leading-relaxed">
-          {t('cmsDemo.cta')} <a className="underline hover:text-[var(--color-text)]" href={`mailto:${t('brand.email')}`}>{t('brand.email')}</a>
+          {t('cmsDemo.cta')}{' '}
+          <ContactUsLink />
         </div>
       </section>
     </div>

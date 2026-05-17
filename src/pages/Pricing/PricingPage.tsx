@@ -408,7 +408,7 @@ export function PricingPage() {
                 <div className="uppercase tracking-[0.22em] text-[10px] text-[var(--color-cta-panel-muted)]">
                   {t('pricing.enterprise.kicker')}
                 </div>
-                <h2 className="mt-5 font-serif font-black uppercase text-[clamp(32px,4.2vw,52px)] leading-[1.02] tracking-tight whitespace-pre-line">
+                <h2 className="mt-5 font-serif font-black uppercase text-[clamp(32px,4.2vw,52px)] leading-display-relaxed tracking-tight whitespace-pre-line">
                   {t('pricing.enterprise.title')}
                 </h2>
                 <p className="mt-8 max-w-[52ch] text-[14px] md:text-[15px] leading-relaxed text-[var(--color-cta-panel-muted)]">

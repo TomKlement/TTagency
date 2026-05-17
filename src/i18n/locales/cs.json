@@ -11,9 +11,12 @@
       "portfolio": "Portfolio",
       "cmsDemo": "CMS Demo",
       "pricing": "Ceník",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "menuOpen": "Menu",
+      "menuClose": "Zavřít"
     },
     "cta": {
+      "contactUs": "Kontaktujte nás",
       "getInTouch": "Kontakt",
       "bookCall": "Domluvit call",
       "getEstimate": "Nacenění",
@@ -60,7 +63,7 @@
     },
     "contact": {
       "title": "Kontakt - BLOC | LAB",
-      "description": "Kontaktujte BLOC | LAB (Praha). Next.js/React weby s vlastním CMS a přímou komunikací. Napište na hello@bloclab.dev",
+      "description": "Kontaktujte BLOC | LAB (Praha). Next.js/React weby s vlastním CMS a přímou komunikací.",
       "ogTitle": "Kontakt - BLOC | LAB",
       "ogDescription": "Jeden kontakt, dva seniorní vývojáři. Weby v Next.js/React + vlastní CMS."
     }
@@ -425,7 +428,7 @@
       { "q": "Jak dlouho trvá běžný web?", "a": "Menší weby umíme dodat do 2 týdnů, pokud je obsah a rozsah jasný. Komplexnější systémy trvají déle a často se dělají po etapách. Časový odhad upřesníme po krátkém zadání." }
     ],
     "contact": [
-      { "q": "Jak kontaktovat BLOC | LAB?", "a": "Napište na hello@bloclab.dev. Stačí krátký brief: co potřebujete, termín, odkazy a reference. Ozveme se s dalším postupem a realistickým odhadem." },
+      { "q": "Jak kontaktovat BLOC | LAB?", "a": "Použijte kontaktní stránku. Stačí krátký brief: co potřebujete, termín, odkazy a reference. Ozveme se s dalším postupem a realistickým odhadem." },
       { "q": "Děláte projekty pro CZ i EN klienty?", "a": "Ano. Působíme v Praze i v Brně a běžně pracujeme v angličtině se zahraničními týmy. Umíme dodat EN-first web a přidat CZ jako druhý jazyk." },
       { "q": "Co mám poslat do první zprávy?", "a": "Cíl webu, jaké stránky/funkce potřebujete, příklady co se vám líbí a termín. Pokud už máte brand nebo texty, pošlete odkazy. To stačí na první odhad." },
       { "q": "Postavíte web pro živnostníka v ČR?", "a": "Ano. Často děláme rychlé, minimalistické weby pro živnostníky a malé firmy. Doporučíme nejjednodušší scope, který pořád působí prémiově." },

@@ -11,9 +11,12 @@
       "portfolio": "Portfolio",
       "cmsDemo": "CMS Demo",
       "pricing": "Pricing",
-      "contact": "Contact"
+      "contact": "Contact",
+      "menuOpen": "Menu",
+      "menuClose": "Close"
     },
     "cta": {
+      "contactUs": "Contact us",
       "getInTouch": "Get in touch",
       "bookCall": "Book a call",
       "getEstimate": "Get an estimate",
@@ -60,7 +63,7 @@
     },
     "contact": {
       "title": "Contact - BLOC | LAB",
-      "description": "Contact BLOC | LAB, a Prague-based Next.js/React web design agency. Direct communication with senior developers. Email: hello@bloclab.dev",
+      "description": "Contact BLOC | LAB, a Prague-based Next.js/React web design agency. Direct communication with senior developers.",
       "ogTitle": "Contact - BLOC | LAB",
       "ogDescription": "One email, direct to the builders. Next.js/React development + custom CMS websites."
     }
@@ -425,7 +428,7 @@
       { "q": "How long does a typical website take?", "a": "Smaller websites can often be delivered within two weeks if content and scope are clear. More complex systems take longer and are usually phased. We’ll confirm timing after a short brief." }
     ],
     "contact": [
-      { "q": "How do I contact BLOC | LAB?", "a": "Email us at hello@bloclab.dev. Send a short brief: what you need, timeline, links, and any references. We’ll reply with next steps and a realistic estimate." },
+      { "q": "How do I contact BLOC | LAB?", "a": "Use the contact page. Send a short brief: what you need, timeline, links, and any references. We’ll reply with next steps and a realistic estimate." },
       { "q": "Do you work with Czech and English clients?", "a": "Yes. We’re based in Prague and Brno, and work in English with international teams. We can deliver English-first websites and add Czech as a second language." },
       { "q": "What information should I include in my message?", "a": "Your goal, what pages or features you need, examples you like, and your timeline. If you have existing brand assets or content, include links. That’s enough for a first estimate." },
       { "q": "Can you build a site for a sole trader in the Czech Republic?", "a": "Yes. We often build fast, minimal sites for freelancers and small businesses. We’ll recommend the simplest scope that still looks and performs premium." },

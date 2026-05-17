@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { FaqSection } from '../../shared/geo/FaqSection'
@@ -6,34 +5,6 @@ import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
 
 export function ContactPage() {
   const { t } = useTranslation()
-  const email = t('brand.email')
-  const [isEmailCopied, setIsEmailCopied] = useState(false)
-  const copyResetTimeoutRef = useRef<number | null>(null)
-
-  useEffect(() => {
-    return () => {
-      if (copyResetTimeoutRef.current !== null) {
-        window.clearTimeout(copyResetTimeoutRef.current)
-      }
-    }
-  }, [])
-
-  async function handleCopyEmail() {
-    try {
-      await navigator.clipboard.writeText(email)
-      setIsEmailCopied(true)
-
-      if (copyResetTimeoutRef.current !== null) {
-        window.clearTimeout(copyResetTimeoutRef.current)
-      }
-
-      copyResetTimeoutRef.current = window.setTimeout(() => {
-        setIsEmailCopied(false)
-      }, 2000)
-    } catch {
-      setIsEmailCopied(false)
-    }
-  }
 
   return (
     <div className="bg-[var(--color-bg)] text-[var(--color-text)]">
@@ -41,25 +12,12 @@ export function ContactPage() {
       <GeoJsonLd pageKey="contact" faqKey="contact" />
       <section className="max-w-[1440px] mx-auto min-h-[760px] border-x border-[var(--color-border)] grid grid-cols-1 lg:grid-cols-12 px-10 md:px-20 py-28 gap-16 lg:gap-24 items-center">
         <div className="lg:col-span-7">
-          <h1 className="font-serif font-black uppercase text-[clamp(58px,8vw,92px)] leading-[0.92] tracking-tight max-w-[760px]">
+          <h1 className="font-serif font-black uppercase text-[clamp(58px,8vw,92px)] leading-display tracking-tight max-w-[760px]">
             {t('contact.h1')}
           </h1>
           <p className="mt-10 text-[var(--color-muted)] text-[18px] leading-relaxed max-w-[560px]">
             {t('contact.body')}
           </p>
-          <div className="mt-10 uppercase tracking-[0.18em] text-[11px] text-[var(--color-muted)]">
-            {t('contact.emailLabel')}:{' '}
-            <button
-              type="button"
-              onClick={handleCopyEmail}
-              className="text-[var(--color-text)] underline hover:opacity-70"
-            >
-              {email}
-            </button>
-            <span aria-live="polite" className="ml-3 text-[var(--color-muted)]">
-              {isEmailCopied ? t('contact.emailCopied') : ''}
-            </span>
-          </div>
         </div>
 
         <div className="lg:col-span-5">
@@ -123,4 +81,3 @@ export function ContactPage() {
     </div>
   )
 }
-

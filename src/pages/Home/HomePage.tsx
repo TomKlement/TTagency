@@ -21,6 +21,8 @@ export function HomePage() {
   }, [])
 
   useEffect(() => {
+    if (reduceMotion) return
+
     const ctx = gsap.context(() => {
       if (!titleRef.current) return
 
@@ -30,6 +32,7 @@ export function HomePage() {
         { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1, ease: 'expo.out' },
       )
 
+      // Transform-only parallax — letter-spacing on scroll widens text and overflows on mobile.
       ScrollTrigger.create({
         trigger: heroRef.current,
         start: 'top top',
@@ -37,18 +40,18 @@ export function HomePage() {
         scrub: true,
         onUpdate(self) {
           if (!titleRef.current) return
-          const t = self.progress
+          const p = self.progress
           gsap.set(titleRef.current, {
-            letterSpacing: `${t * 0.085}em`,
-            scale: 1 - t * 0.06,
-            opacity: 1 - t * 0.18,
+            y: p * -20,
+            opacity: 1 - p * 0.2,
+            transformOrigin: 'left bottom',
           })
         },
       })
     }, heroRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [reduceMotion])
 
   useEffect(() => {
     if (reduceMotion) return
@@ -94,7 +97,7 @@ export function HomePage() {
           </p>
           <h1
             ref={titleRef}
-            className="font-serif font-black uppercase leading-[0.92] text-[clamp(58px,10vw,120px)] max-w-[980px] whitespace-pre-line"
+            className="font-serif font-black uppercase leading-display text-[clamp(2.25rem,10vw,7.5rem)] max-w-full whitespace-pre-line break-words"
           >
             {t('home.hero.h1')}
           </h1>

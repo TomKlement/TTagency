@@ -21,6 +21,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -68,5 +69,40 @@ body {
     linear-gradient(to bottom, var(--color-soft) 1px, transparent 1px);
   background-size: 25% 100px;
   background-position: 0 0;
+}
+
+/* Display headings: extra line-height only for Czech diacritics */
+@layer utilities {
+  .leading-display {
+    line-height: 0.92;
+  }
+
+  :lang(cs) .leading-display {
+    line-height: 1.1;
+  }
+
+  .leading-display-snug {
+    line-height: 0.9;
+  }
+
+  :lang(cs) .leading-display-snug {
+    line-height: 1.08;
+  }
+
+  .leading-display-title {
+    line-height: 0.95;
+  }
+
+  :lang(cs) .leading-display-title {
+    line-height: 1.08;
+  }
+
+  .leading-display-relaxed {
+    line-height: 1.02;
+  }
+
+  :lang(cs) .leading-display-relaxed {
+    line-height: 1.1;
+  }
 }
 

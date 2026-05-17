@@ -96,7 +96,7 @@ export function PortfolioPage() {
           data-reveal
           className="flex min-h-[340px] items-center border-b border-r border-[var(--color-border)] bg-[var(--color-bg)] p-8 md:col-span-2"
         >
-          <p className="font-serif font-black text-[clamp(40px,6vw,92px)] uppercase leading-[0.9] tracking-tight">
+          <p className="font-serif font-black text-[clamp(40px,6vw,92px)] uppercase leading-display-snug tracking-tight">
             {t('portfolio.slogan')
               .split('\n')
               .map((line, idx) => (

@@ -50,7 +50,7 @@ export function CaseStudyCard({ study, viewSiteText, viewSiteAria }: Props) {
             <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--color-muted)] transition-colors duration-200 group-hover:text-[var(--color-bg)]">
               {study.category}
             </p>
-            <h2 className="font-serif font-black text-[clamp(32px,4vw,64px)] uppercase leading-[0.95] tracking-tight">
+            <h2 className="font-serif font-black text-[clamp(32px,4vw,64px)] uppercase leading-display-title tracking-tight">
               {study.title}
             </h2>
             <p className="mt-6 max-w-[38ch] text-[13px] leading-relaxed text-[var(--color-muted)] transition-colors duration-200 group-hover:text-[var(--color-bg)]">
