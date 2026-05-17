@@ -128,10 +128,8 @@ export function HomePage() {
             </div>
           </Link>
 
-          <a
-            href="https://arch-one-lake.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/cms-demo"
             data-reveal
             className="group col-span-12 md:col-span-8 min-h-[360px] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 relative overflow-hidden"
           >
@@ -154,7 +152,7 @@ export function HomePage() {
                 {t('home.blocks.cms.cta')}
               </span>
             </div>
-          </a>
+          </Link>
 
           <Link
             to="/pricing"

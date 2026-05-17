@@ -10,7 +10,7 @@ export type CaseStudy = {
   result: string
   href: string
   className: string
-  /** Public URL (e.g. /portfolio/previews/...) — shown only on hover */
+  /** Public URL (e.g. /portfolio/previews/...) - shown only on hover */
   previewSrc?: string
   /**
    * `cover` = wider strip sliding in from the right.

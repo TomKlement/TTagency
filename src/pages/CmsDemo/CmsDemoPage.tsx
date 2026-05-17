@@ -71,7 +71,14 @@ export function CmsDemoPage() {
     return window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false
   }, [])
 
-  const templates = t('cmsDemo.templates', { returnObjects: true }) as Array<{ title: string; items: string[] }>
+  const templates = t('cmsDemo.templates', { returnObjects: true }) as Array<{
+    title: string
+    items: string[]
+    previewUrl?: string
+  }>
+
+  const buttonClassName =
+    'mt-8 w-full shrink-0 uppercase tracking-[0.18em] text-[11px] h-12 border border-current bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] inline-flex items-center justify-center'
 
   useEffect(() => {
     if (reduceMotion) return
@@ -148,12 +155,20 @@ export function CmsDemoPage() {
                   ))}
                 </ul>
               </div>
-              <button
-                type="button"
-                className="mt-8 w-full shrink-0 uppercase tracking-[0.18em] text-[11px] h-12 border border-current bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
-              >
-                {t('cmsDemo.button')}
-              </button>
+              {c.previewUrl ? (
+                <a
+                  href={c.previewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonClassName}
+                >
+                  {t('cmsDemo.button')}
+                </a>
+              ) : (
+                <button type="button" className={buttonClassName}>
+                  {t('cmsDemo.button')}
+                </button>
+              )}
             </article>
           ))}
         </div>

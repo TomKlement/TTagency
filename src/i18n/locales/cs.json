@@ -35,33 +35,33 @@
   },
   "meta": {
     "home": {
-      "title": "BLOC | LAB — Next.js/React weby Praha",
+      "title": "BLOC | LAB - Next.js/React weby Praha",
       "description": "Minimalistické weby v React/Next.js s vlastním CMS. Praha, Česká republika. Projekty pro CZ/SK i zahraničí.",
-      "ogTitle": "BLOC | LAB — Next.js/React studio",
+      "ogTitle": "BLOC | LAB - Next.js/React studio",
       "ogDescription": "Architektonický web design + vývoj v Next.js/React. Vlastní CMS a šablony v ceně. Praha, globálně."
     },
     "portfolio": {
-      "title": "Portfolio — BLOC | LAB",
+      "title": "Portfolio - BLOC | LAB",
       "description": "Ukázky webů v Next.js/React s minimalistickým „architektonickým“ stylem. Praha, CZ. Projekty i pro zahraničí.",
-      "ogTitle": "Portfolio — BLOC | LAB",
+      "ogTitle": "Portfolio - BLOC | LAB",
       "ogDescription": "Vybrané projekty: weby, SaaS, e-commerce koncepty a CMS šablony v Next.js/React."
     },
     "cmsDemo": {
-      "title": "CMS Demo — BLOC | LAB",
-      "description": "Vlastní CMS weby v Next.js/React. Šablony MONO, NODE a BLOCK — jedna stránka, více stránek nebo prezentace s galeriemi. Praha, Česká republika — i pro EN trh.",
-      "ogTitle": "CMS Demo — MONO / NODE / BLOCK",
+      "title": "CMS Demo - BLOC | LAB",
+      "description": "Vlastní CMS weby v Next.js/React. Šablony MONO, NODE a BLOCK - jedna stránka, více stránek nebo prezentace s galeriemi. Praha, Česká republika - i pro EN trh.",
+      "ogTitle": "CMS Demo - MONO / NODE / BLOCK",
       "ogDescription": "Vlastní CMS + šablony v ceně. Úpravy obsahu bez rozbití typografie a layoutu."
     },
     "pricing": {
-      "title": "Ceník — BLOC | LAB",
+      "title": "Ceník - BLOC | LAB",
       "description": "Subscription model a jednorázové dodávky pro Next.js/React weby a webové aplikace. Praha, přímá komunikace, CMS šablony.",
-      "ogTitle": "Ceník — BLOC | LAB",
+      "ogTitle": "Ceník - BLOC | LAB",
       "ogDescription": "Subscription kapacita + jednorázové dodávky: CMS šablonové weby, webové aplikace a speciální portfolia. Praha, globálně."
     },
     "contact": {
-      "title": "Kontakt — BLOC | LAB",
+      "title": "Kontakt - BLOC | LAB",
       "description": "Kontaktujte BLOC | LAB (Praha). Next.js/React weby s vlastním CMS a přímou komunikací. Napište na hello@bloclab.dev",
-      "ogTitle": "Kontakt — BLOC | LAB",
+      "ogTitle": "Kontakt - BLOC | LAB",
       "ogDescription": "Jeden kontakt, dva seniorní vývojáři. Weby v Next.js/React + vlastní CMS."
     }
   },
@@ -80,7 +80,7 @@
       },
       "cms": {
         "number": "02",
-        "title": "ARCH +",
+        "title": "CMS Demo",
         "body": "Texty a obrázky si upravíte sami. My pohlídáme, aby se web nerozpadl vizuálně ani technicky.",
         "cta": "Spustit demo"
       },
@@ -128,7 +128,7 @@
       {
         "number": "01",
         "title": "MP DETAILING",
-        "category": "Auto detailing — web služeb",
+        "category": "Auto detailing - web služeb",
         "year": "2025",
         "description": "Prezentace prémiového detailingu: korekce laku, keramická ochrana a interiér, přehledné programy s cenami, galerie práce a jasný kontakt včetně rezervace.",
         "result": "Služby · Ceník · Galerie",
@@ -168,7 +168,7 @@
         "title": "BLOC CMS DEMO",
         "category": "Systém šablon",
         "year": "2026",
-        "description": "Tři šablony ve CMS demu — MONO, NODE, BLOCK (jedna stránka, více stránek, prezentace). Opakovatelné sekce, editorská kontrola a bezpečná typografická škála.",
+        "description": "Tři šablony ve CMS demu - MONO, NODE, BLOCK (jedna stránka, více stránek, prezentace). Opakovatelné sekce, editorská kontrola a bezpečná typografická škála.",
         "result": "MONO / NODE / BLOCK",
         "href": "#"
       }
@@ -177,20 +177,21 @@
     "viewSite": "Otevřít"
   },
   "cmsDemo": {
-    "h1": "CMS demo — obsah měníte vy, design zůstává",
-    "intro": "Dostanete web, který můžete upravovat sami — bez toho, aby se z něj po měsíci stal vizuální chaos.",
+    "h1": "CMS demo - obsah měníte vy, design zůstává",
+    "intro": "Dostanete web, který můžete upravovat sami - bez toho, aby se z něj po měsíci stal vizuální chaos.",
     "button": "Spustit náhled",
     "templates": [
       {
         "title": "MONO",
         "items": [
-          "Vše na jedné stránce — rychlé, přehledné, dobře čitelné na mobilu",
+          "Vše na jedné stránce - rychlé, přehledné, dobře čitelné na mobilu",
           "Ideální pro živnostníky a jednoduché prezentace",
-          "Úvod, služby, o vás, kontakt — vše tam, kde to návštěvník čeká"
+          "Úvod, služby, o vás, kontakt - vše tam, kde to návštěvník čeká"
         ]
       },
       {
-        "title": "NODE",
+        "title": "ARCH",
+        "previewUrl": "https://arch-one-lake.vercel.app/",
         "items": [
           "Vlastní stránka pro každou důležitou část webu",
           "Struktura napříč stránkami připravená pro SEO",
@@ -200,7 +201,7 @@
       {
         "title": "BLOCK",
         "items": [
-          "Práce mluví za vás — galerie, mřížka projektů, velké vizuály",
+          "Práce mluví za vás - galerie, mřížka projektů, velké vizuály",
           "Šablona pro kreativce, studia a architekty",
           "Reference jako střed webu, ne jako příloha na konci"
         ]
@@ -219,7 +220,7 @@
     "enterprise": {
       "kicker": "Mimo šablonu",
       "title": "NA MÍRU\nA VĚTŠÍ ROZSAH",
-      "body": "Custom web, webová aplikace nebo interní systém — rozsah vždy po krátké konzultaci. Navrhneme strukturu, technické řešení a férové etapování.",
+      "body": "Custom web, webová aplikace nebo interní systém - rozsah vždy po krátké konzultaci. Navrhneme strukturu, technické řešení a férové etapování.",
       "cta": "Domluvit konzultaci"
     },
     "subscription": {
@@ -231,7 +232,7 @@
           "price": "490 Kč / měs",
           "blurb": "Jednoduchý web pro živnostníka nebo malou firmu. Vybereme šablonu, doplníme obsah a změny řešíme za Vás dle domluvy.",
           "features": [
-            "Výběr ze 3 šablon — MONO, NODE, BLOCK (jedna stránka / více stránek / prezentace)",
+            "Výběr ze 3 šablon - MONO, NODE, BLOCK (jedna stránka / více stránek / prezentace)",
             "Hosting + doména v ceně",
             "Obsah upravujeme my v rámci supportu",
             "1 hod. podpory měsíčně"
@@ -244,7 +245,7 @@
           "blurb": "Stejný základ jako Start, ale s editorem. Texty, obrázky a vybrané sekce si upravíte i sami.",
           "features": [
             "Vše z tarifu Start",
-            "Vlastní CMS editor — texty, bloky, obrázky si můžete upravit sami",
+            "Vlastní CMS editor - texty, bloky, obrázky si můžete upravit sami",
             "Základní SEO nastavení"
           ],
           "cta": "Chci Start CMS"
@@ -314,7 +315,7 @@
         "rows": [
           ["Web ze šablony", "✓", "✓", "✓"],
           ["Hosting + doména v ceně", "✓", "✓", "✓"],
-          ["Vlastní editor obsahu (CMS)", "—", "✓", "✓"],
+          ["Vlastní editor obsahu (CMS)", "-", "✓", "✓"],
           ["Počet sekcí/modulů", "Základ", "Standard", "Rozšířený"],
           ["Pro koho", "Živnostník", "Menší firma", "Firma / růst"]
         ]
@@ -395,8 +396,8 @@
   },
   "faq": {
     "home": [
-      { "q": "Je BLOC | LAB agentura nebo freelanceři?", "a": "Jsme menší studio. Nemáme account manažery ani outsourcing — máte přímý kontakt na lidi, co projekt dělají." },
-      { "q": "I pro živnostníky?", "a": "Ano. Děláme rychlé, minimalistické weby pro živnostníky a malé firmy — typicky služby, o vás, reference a kontakt. Umíme přidat CMS, abyste si obsah upravovali sami." },
+      { "q": "Je BLOC | LAB agentura nebo freelanceři?", "a": "Jsme menší studio. Nemáme account manažery ani outsourcing - máte přímý kontakt na lidi, co projekt dělají." },
+      { "q": "I pro živnostníky?", "a": "Ano. Děláme rychlé, minimalistické weby pro živnostníky a malé firmy - typicky služby, o vás, reference a kontakt. Umíme přidat CMS, abyste si obsah upravovali sami." },
       { "q": "V jakém stacku stavíte weby?", "a": "Primárně Next.js a React. Často dodáváme i vlastní CMS se šablonami, aby šel obsah bezpečně editovat. Cílem je čistý systém, který se dobře udržuje." },
       { "q": "Kde sídlíte a děláte i zahraniční projekty?", "a": "Působíme v rámci celé ČR, pracovní schůzky jsou možné v Praze i v Brně, případně online.\n\nDěláme i zahraniční projekty" }
     ],

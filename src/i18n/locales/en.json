@@ -35,33 +35,33 @@
   },
   "meta": {
     "home": {
-      "title": "BLOC | LAB — Next.js & React Web Design Agency",
+      "title": "BLOC | LAB - Next.js & React Web Design Agency",
       "description": "Minimal, architectural websites in Next.js/React with a custom CMS. Based in Prague, Czech Republic. Serving EU & global teams.",
-      "ogTitle": "BLOC | LAB — Next.js & React Agency",
+      "ogTitle": "BLOC | LAB - Next.js & React Agency",
       "ogDescription": "Brutal-minimal web design + React/Next.js builds with a CMS included. Prague-based, global delivery."
     },
     "portfolio": {
-      "title": "Portfolio — BLOC | LAB",
+      "title": "Portfolio - BLOC | LAB",
       "description": "Next.js/React websites with a brutal-minimal design. See selected work from a Prague-based web design agency serving global clients.",
-      "ogTitle": "Portfolio — BLOC | LAB",
+      "ogTitle": "Portfolio - BLOC | LAB",
       "ogDescription": "Selected Next.js/React builds: websites, SaaS, e-commerce concepts, and CMS-driven templates."
     },
     "cmsDemo": {
-      "title": "CMS Demo — BLOC | LAB",
-      "description": "Custom CMS websites in Next.js/React. MONO, NODE, and BLOCK templates — one page, multi-page, and showcase layouts. Prague-based, global delivery.",
-      "ogTitle": "CMS Demo — MONO / NODE / BLOCK",
+      "title": "CMS Demo - BLOC | LAB",
+      "description": "Custom CMS websites in Next.js/React. MONO, NODE, and BLOCK templates - one page, multi-page, and showcase layouts. Prague-based, global delivery.",
+      "ogTitle": "CMS Demo - MONO / NODE / BLOCK",
       "ogDescription": "A custom CMS + templates included. Edit content safely while keeping a brutal-minimal design system."
     },
     "pricing": {
-      "title": "Pricing — BLOC | LAB",
+      "title": "Pricing - BLOC | LAB",
       "description": "Subscription and one-off builds for Next.js/React websites and web apps. Prague-based studio with direct communication and CMS templates.",
-      "ogTitle": "Pricing — BLOC | LAB",
+      "ogTitle": "Pricing - BLOC | LAB",
       "ogDescription": "Subscription capacity and one-off builds: CMS template websites, web apps, and special-design portfolios. Prague-based, global delivery."
     },
     "contact": {
-      "title": "Contact — BLOC | LAB",
+      "title": "Contact - BLOC | LAB",
       "description": "Contact BLOC | LAB, a Prague-based Next.js/React web design agency. Direct communication with senior developers. Email: hello@bloclab.dev",
-      "ogTitle": "Contact — BLOC | LAB",
+      "ogTitle": "Contact - BLOC | LAB",
       "ogDescription": "One email, direct to the builders. Next.js/React development + custom CMS websites."
     }
   },
@@ -80,8 +80,8 @@
       },
       "cms": {
         "number": "02",
-        "title": "ARCH +",
-        "body": "You edit text and images yourself. We keep your site from breaking—visually or technically.",
+        "title": "CMS Demo",
+        "body": "You edit text and images yourself. We keep your site from breaking-visually or technically.",
         "cta": "Initialize Demo"
       },
       "pricing": {
@@ -128,7 +128,7 @@
       {
         "number": "01",
         "title": "MP DETAILING",
-        "category": "Auto detailing — service site",
+        "category": "Auto detailing - service site",
         "year": "2025",
         "description": "Premium auto detailing positioning: paint correction, ceramic coating, and interior care, structured package pricing, a strong work gallery, and clear contact paths including booking.",
         "result": "Services · Pricing · Gallery",
@@ -168,7 +168,7 @@
         "title": "BLOC CMS DEMO",
         "category": "Template system",
         "year": "2026",
-        "description": "Three CMS demo templates—MONO, NODE, and BLOCK. Reusable sections, editorial controls, and a safe typography scale.",
+        "description": "Three CMS demo templates-MONO, NODE, and BLOCK. Reusable sections, editorial controls, and a safe typography scale.",
         "result": "MONO / NODE / BLOCK",
         "href": "#"
       }
@@ -177,20 +177,21 @@
     "viewSite": "View site"
   },
   "cmsDemo": {
-    "h1": "CMS demo — edit content, keep the design",
+    "h1": "CMS demo - edit content, keep the design",
     "intro": "Our CMS is built for speed and control. You get safe templates, reusable sections, and a structure that supports SEO without turning your site into a patchwork.",
     "button": "Launch preview",
     "templates": [
       {
         "title": "MONO",
         "items": [
-          "Everything on one page — fast, clear, mobile-friendly",
+          "Everything on one page - fast, clear, mobile-friendly",
           "Ideal for freelancers and straightforward presentations",
-          "Intro, services, about, contact — right where visitors expect them"
+          "Intro, services, about, contact - right where visitors expect them"
         ]
       },
       {
-        "title": "NODE",
+        "title": "ARCH",
+        "previewUrl": "https://arch-one-lake.vercel.app/",
         "items": [
           "A dedicated page for each important part of the site",
           "Structure across pages that’s built with SEO in mind",
@@ -200,7 +201,7 @@
       {
         "title": "BLOCK",
         "items": [
-          "Let the work speak — galleries, grids, large visuals",
+          "Let the work speak - galleries, grids, large visuals",
           "Tailored for creatives, studios, and architects",
           "Reference projects as the center of the site, not an afterthought"
         ]
@@ -219,7 +220,7 @@
     "enterprise": {
       "kicker": "Beyond the grid",
       "title": "CUSTOM\nSCOPE & PRODUCTS",
-      "body": "Custom websites, web apps, or internal tools — scope always after a short consult. We’ll propose structure, technical approach, and fair phasing.",
+      "body": "Custom websites, web apps, or internal tools - scope always after a short consult. We’ll propose structure, technical approach, and fair phasing.",
       "cta": "Book a consult"
     },
     "subscription": {
@@ -231,7 +232,7 @@
           "price": "490 CZK / mo",
           "blurb": "A simple site for freelancers or small businesses. We pick a template, fill in the content, and handle changes for you by agreement.",
           "features": [
-            "Pick from 3 templates — MONO, NODE, BLOCK (one page / multi-page / showcase)",
+            "Pick from 3 templates - MONO, NODE, BLOCK (one page / multi-page / showcase)",
             "Hosting + domain included",
             "Content updates by us within your monthly support",
             "1 hour of support per month"
@@ -244,7 +245,7 @@
           "blurb": "The same foundation as Start, but with an editor. You can also update text, images, and selected sections yourself.",
           "features": [
             "Everything in Start",
-            "CMS editor — you can edit text, blocks, and images yourself",
+            "CMS editor - you can edit text, blocks, and images yourself",
             "Basic SEO setup"
           ],
           "cta": "Get Start CMS"
@@ -314,7 +315,7 @@
         "rows": [
           ["Template website", "✓", "✓", "✓"],
           ["Hosting + domain included", "✓", "✓", "✓"],
-          ["CMS/content editor", "—", "✓", "✓"],
+          ["CMS/content editor", "-", "✓", "✓"],
           ["Sections/modules", "Basic", "Standard", "Extended"],
           ["Best for", "Solo", "Small business", "Growth teams"]
         ]
@@ -395,7 +396,7 @@
   },
   "faq": {
     "home": [
-      { "q": "Is BLOC | LAB an agency or freelancers?", "a": "We’re a smaller studio. No account managers or outsourcing—you work directly with the people who build your project." },
+      { "q": "Is BLOC | LAB an agency or freelancers?", "a": "We’re a smaller studio. No account managers or outsourcing-you work directly with the people who build your project." },
       { "q": "For freelancers and sole traders too?", "a": "Yes. We build fast, minimal websites for freelancers and small businesses, including service pages, contact flows, and an SEO-ready structure. If you want, we can include our CMS for self-editing." },
       { "q": "What stack do you use?", "a": "We build in Next.js and React. Many projects include our own CMS with templates so content can be edited safely. The goal is a clean system that stays maintainable." },
       { "q": "Where are you based and do you work internationally?", "a": "We work across the Czech Republic; meetings are possible in Prague and Brno, or online.\n\nWe also take on international projects." }
