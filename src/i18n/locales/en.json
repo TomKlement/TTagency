@@ -337,7 +337,11 @@
       "nameLabel": "Name",
       "emailLabel": "Email",
       "messageLabel": "Message",
-      "submit": "Send"
+      "submit": "Send",
+      "sending": "Sending…",
+      "success": "Thank you. We’ll get back to you within 24–48 hours.",
+      "error": "Something went wrong. Please try again or email hello@bloclab.dev directly.",
+      "errorValidation": "Please check the fields and try again."
     }
   }
   ,

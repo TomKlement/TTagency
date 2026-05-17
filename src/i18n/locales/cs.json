@@ -337,7 +337,11 @@
       "nameLabel": "Jméno",
       "emailLabel": "E-mail",
       "messageLabel": "Zpráva",
-      "submit": "Odeslat"
+      "submit": "Odeslat",
+      "sending": "Odesílám…",
+      "success": "Děkujeme. Ozveme se do 24–48 hodin.",
+      "error": "Odeslání se nepovedlo. Zkuste to znovu, nebo napište přímo na hello@bloclab.dev.",
+      "errorValidation": "Zkontrolujte prosím vyplněná pole."
     }
   }
   ,

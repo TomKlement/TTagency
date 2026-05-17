@@ -1,10 +1,62 @@
+import { useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PageMeta } from '../../shared/seo/PageMeta'
 import { FaqSection } from '../../shared/geo/FaqSection'
 import { GeoJsonLd } from '../../shared/geo/GeoJsonLd'
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error' | 'validation'
+
 export function ContactPage() {
   const { t } = useTranslation()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [gotcha, setGotcha] = useState('')
+  const [status, setStatus] = useState<FormStatus>('idle')
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (status === 'loading') return
+
+    setStatus('loading')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message, _gotcha: gotcha }),
+      })
+
+      if (res.ok) {
+        setName('')
+        setEmail('')
+        setMessage('')
+        setGotcha('')
+        setStatus('success')
+        return
+      }
+
+      if (res.status === 400) {
+        setStatus('validation')
+        return
+      }
+
+      setStatus('error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  const statusMessage =
+    status === 'success'
+      ? t('contact.form.success')
+      : status === 'validation'
+        ? t('contact.form.errorValidation')
+        : status === 'error'
+          ? t('contact.form.error')
+          : null
+
+  const isLoading = status === 'loading'
 
   return (
     <div className="bg-[var(--color-bg)] text-[var(--color-text)]">
@@ -21,8 +73,27 @@ export function ContactPage() {
         </div>
 
         <div className="lg:col-span-5">
-          <form className="w-full max-w-[520px] ml-auto border border-[var(--color-border)] p-8 md:p-10">
+          <form
+            className="w-full max-w-[520px] ml-auto border border-[var(--color-border)] p-8 md:p-10"
+            onSubmit={handleSubmit}
+            noValidate
+          >
             <div className="space-y-8">
+              <div
+                className="absolute -left-[9999px] h-px w-px overflow-hidden"
+                aria-hidden="true"
+              >
+                <label htmlFor="contact-gotcha">Company</label>
+                <input
+                  id="contact-gotcha"
+                  name="_gotcha"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={gotcha}
+                  onChange={(e) => setGotcha(e.target.value)}
+                />
+              </div>
+
               <div>
                 <label
                   htmlFor="contact-name"
@@ -32,8 +103,15 @@ export function ContactPage() {
                 </label>
                 <input
                   id="contact-name"
+                  name="name"
+                  required
+                  minLength={2}
+                  maxLength={200}
                   autoComplete="name"
-                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  disabled={isLoading || status === 'success'}
+                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0 disabled:opacity-50"
                 />
               </div>
               <div>
@@ -45,9 +123,14 @@ export function ContactPage() {
                 </label>
                 <input
                   id="contact-email"
+                  name="email"
                   type="email"
+                  required
                   autoComplete="email"
-                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isLoading || status === 'success'}
+                  className="mt-3 w-full bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0 disabled:opacity-50"
                 />
               </div>
               <div>
@@ -59,18 +142,38 @@ export function ContactPage() {
                 </label>
                 <textarea
                   id="contact-message"
+                  name="message"
+                  required
+                  minLength={10}
+                  maxLength={5000}
                   rows={4}
-                  className="mt-3 w-full resize-none bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  disabled={isLoading || status === 'success'}
+                  className="mt-3 w-full resize-none bg-transparent border-0 border-b border-[var(--color-border)] focus:border-[var(--color-border)] focus:ring-0 text-[var(--color-text)] uppercase tracking-[0.18em] text-[11px] py-3 px-0 disabled:opacity-50"
                 />
               </div>
             </div>
 
+            {statusMessage ? (
+              <p
+                role="status"
+                aria-live="polite"
+                className={`mt-8 text-[11px] uppercase tracking-[0.18em] leading-relaxed ${
+                  status === 'success' ? 'text-[var(--color-text)]' : 'text-[var(--color-muted)]'
+                }`}
+              >
+                {statusMessage}
+              </p>
+            ) : null}
+
             <div className="mt-10">
               <button
-                type="button"
-                className="w-full h-14 uppercase tracking-[0.18em] text-[11px] border border-[var(--color-border)] bg-[var(--color-text)] text-[var(--color-bg)] hover:bg-[var(--color-bg)] hover:text-[var(--color-text)]"
+                type="submit"
+                disabled={isLoading || status === 'success'}
+                className="w-full h-14 uppercase tracking-[0.18em] text-[11px] border border-[var(--color-border)] bg-[var(--color-text)] text-[var(--color-bg)] hover:bg-[var(--color-bg)] hover:text-[var(--color-text)] disabled:opacity-50 disabled:pointer-events-none"
               >
-                {t('contact.form.submit')}
+                {isLoading ? t('contact.form.sending') : t('contact.form.submit')}
               </button>
             </div>
           </form>
