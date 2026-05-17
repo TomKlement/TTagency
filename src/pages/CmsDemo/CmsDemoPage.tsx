@@ -75,10 +75,14 @@ export function CmsDemoPage() {
     title: string
     items: string[]
     previewUrl?: string
+    comingSoon?: boolean
   }>
 
   const buttonClassName =
     'mt-8 w-full shrink-0 uppercase tracking-[0.18em] text-[11px] h-12 border border-current bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] inline-flex items-center justify-center'
+
+  const buttonDisabledClassName =
+    'mt-8 w-full shrink-0 uppercase tracking-[0.18em] text-[11px] h-12 border border-current/40 bg-[var(--color-bg)] text-[var(--color-muted)] opacity-60 cursor-not-allowed inline-flex items-center justify-center'
 
   useEffect(() => {
     if (reduceMotion) return
@@ -133,7 +137,8 @@ export function CmsDemoPage() {
               key={c.title}
               data-reveal
               className={[
-                'grid min-h-[560px] h-full self-stretch grid-rows-[auto_auto_minmax(0,1fr)_auto] p-9 md:p-10 group hover:bg-[var(--color-surface)]',
+                'relative grid min-h-[560px] h-full self-stretch grid-rows-[auto_auto_minmax(0,1fr)_auto] p-9 md:p-10',
+                c.comingSoon ? '' : 'group hover:bg-[var(--color-surface)]',
                 idx < 2 ? 'border-b md:border-b-0 md:border-r border-[var(--color-border)]' : '',
               ].join(' ')}
             >
@@ -155,7 +160,11 @@ export function CmsDemoPage() {
                   ))}
                 </ul>
               </div>
-              {c.previewUrl ? (
+              {c.comingSoon ? (
+                <button type="button" disabled className={buttonDisabledClassName}>
+                  {t('cmsDemo.button')}
+                </button>
+              ) : c.previewUrl ? (
                 <a
                   href={c.previewUrl}
                   target="_blank"
@@ -169,6 +178,17 @@ export function CmsDemoPage() {
                   {t('cmsDemo.button')}
                 </button>
               )}
+              {c.comingSoon ? (
+                <>
+                  <div
+                    className="pointer-events-none absolute inset-0 z-20 bg-[var(--color-text)]/30"
+                    aria-hidden
+                  />
+                  <span className="pointer-events-none absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 border border-current bg-[var(--color-bg)] text-[var(--color-text)] px-6 py-3 uppercase tracking-[0.22em] text-[10px] font-medium shadow-sm">
+                    {t('cmsDemo.comingSoon')}
+                  </span>
+                </>
+              ) : null}
             </article>
           ))}
         </div>

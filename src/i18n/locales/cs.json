@@ -180,9 +180,11 @@
     "h1": "CMS demo - obsah měníte vy, design zůstává",
     "intro": "Dostanete web, který můžete upravovat sami - bez toho, aby se z něj po měsíci stal vizuální chaos.",
     "button": "Spustit náhled",
+    "comingSoon": "Připravujeme",
     "templates": [
       {
         "title": "MONO",
+        "previewUrl": "https://mono-bloclab.vercel.app/",
         "items": [
           "Vše na jedné stránce - rychlé, přehledné, dobře čitelné na mobilu",
           "Ideální pro živnostníky a jednoduché prezentace",
@@ -200,6 +202,7 @@
       },
       {
         "title": "BLOCK",
+        "comingSoon": true,
         "items": [
           "Práce mluví za vás - galerie, mřížka projektů, velké vizuály",
           "Šablona pro kreativce, studia a architekty",

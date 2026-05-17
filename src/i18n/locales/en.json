@@ -180,9 +180,11 @@
     "h1": "CMS demo - edit content, keep the design",
     "intro": "Our CMS is built for speed and control. You get safe templates, reusable sections, and a structure that supports SEO without turning your site into a patchwork.",
     "button": "Launch preview",
+    "comingSoon": "Coming soon",
     "templates": [
       {
         "title": "MONO",
+        "previewUrl": "https://mono-bloclab.vercel.app/",
         "items": [
           "Everything on one page - fast, clear, mobile-friendly",
           "Ideal for freelancers and straightforward presentations",
@@ -200,6 +202,7 @@
       },
       {
         "title": "BLOCK",
+        "comingSoon": true,
         "items": [
           "Let the work speak - galleries, grids, large visuals",
           "Tailored for creatives, studios, and architects",
